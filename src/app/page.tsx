@@ -1,6 +1,6 @@
 import ProductsTable from "./components/ProductTable";
 
-export const getProducts = async () => {
+const getProducts = async () => {
   const products: any[] = [
     {
       "id": "1",
