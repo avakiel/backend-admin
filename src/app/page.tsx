@@ -1,4 +1,5 @@
 import ProductsTable from "./components/ProductTable";
+// import * as phonesData from "../../seed_data/products/index.json"
 
 const getProducts = async () => {
   const products: any[] = [
