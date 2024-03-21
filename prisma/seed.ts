@@ -2,23 +2,30 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
-  const data = require('./../seed_data/products/index.json');
+  const jsonPaths = [
+    '../seed_data/products/accessories.json',
+  ]
 
-  for (const item of data) {
-    try {
-      await prisma.phone.create({ data: item });
-      console.log(`Phone ${item.name} created successfully.`);
-    } catch (error) {
-      console.error(`Error creating phone ${item.name}:`, error);
+  for (const jsonPath of jsonPaths) {
+    const data = require(jsonPath)
+
+    let model
+   if (jsonPath.includes('accessories')) model = prisma.accessory
+
+
+    for (const record of data) {
+      if (model) {
+        await model.create({ data: record })
+      }
     }
   }
 }
 
 main()
   .catch((e) => {
-    console.error(e);
-    process.exit(1);
+    console.error(e)
+    process.exit(1)
   })
   .finally(async () => {
-    await prisma.$disconnect();
-  });
+    await prisma.$disconnect()
+  })
