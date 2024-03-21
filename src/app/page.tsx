@@ -1,5 +1,7 @@
 import ProductsTable from "./components/ProductTable";
 // import * as phonesData from "../../seed_data/products/index.json"
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 const getProducts = async () => {
   const products: any[] = [
@@ -1078,8 +1080,14 @@ export default async function Home() {
   const products = await getProducts();
 
   return (
-    <main>
-      <ProductsTable products={products} />
-    </main>
+    <div>
+      <Header />
+      <Main products={products} />
+
+        {/* <main>
+          <ProductsTable products={products} />
+        </main> */}
+      
+    </div>
   );
 }
