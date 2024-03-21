@@ -33,3 +33,43 @@ model Phone {
 	zoom String
 	cell Json
   }
+
+  model Accessory {
+	id String @id
+	namespaceId String
+	name String
+	capacityAvailable Json
+	capacity String
+	priceRegular Int
+	priceDiscount Int
+	colorsAvailable Json
+	color String
+	images Json
+	description Json
+	screen String
+	resolution String
+	processor String
+	ram String
+	cell Json
+  }
+
+  model Tablet {
+	id String @id
+	namespaceId String
+	name String
+	capacityAvailable Json
+	capacity String
+	priceRegular Int
+	priceDiscount Int
+	colorsAvailable Json
+	color String
+	images Json
+	description Json
+	screen String
+	resolution String
+	processor String
+	ram String
+	camera String
+	zoom String
+	cell Json
+  }
