@@ -19,8 +19,8 @@ model Phone {
 	name String
 	capacityAvailable Json
 	capacity String
-	priceRegular Decimal
-	priceDiscount Decimal
+	priceRegular Int
+	priceDiscount Int
 	colorsAvailable Json
 	color String
 	images Json

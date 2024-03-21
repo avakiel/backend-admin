@@ -3,10 +3,10 @@
 import React, { useState } from 'react';
 import { Tabs, Tab, Typography, Box } from '@mui/material';
 import ProductsTable from './ProductTable';
-import { Product } from '@/types/Product';
+import { Product, SelectedPhone } from '@/types/Product';
 
 interface Props {
-  products: Product[];
+  products: SelectedPhone[];
 }
 
 const Main: React.FC<Props> = ({ products }) => {

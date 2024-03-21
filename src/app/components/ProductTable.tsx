@@ -1,9 +1,9 @@
 import React from "react";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Checkbox } from "@mui/material";
-import { Product } from "@/types/Product";
+import { Product, SelectedPhone } from "@/types/Product";
 
 interface Props {
-  products: Product[];
+  products: SelectedPhone[];
 }
 
 const ProductsTable: React.FC<Props> = ({ products }) => {
@@ -43,13 +43,12 @@ const rowCount = 0;
             <TableRow key={product.id}>
               <TableCell>{product.id}</TableCell>
               <TableCell>{product.name}</TableCell>
-              <TableCell>{product.fullPrice}</TableCell>
-              <TableCell>{product.price}</TableCell>
+              <TableCell>{product.priceRegular}</TableCell>
+              <TableCell>{product.priceDiscount}</TableCell>
               <TableCell>{product.screen}</TableCell>
               <TableCell>{product.capacity}</TableCell>
               <TableCell>{product.color}</TableCell>
               <TableCell>{product.ram}</TableCell>
-              <TableCell>{product.year}</TableCell>
             </TableRow>
           ))}
         </TableBody>
