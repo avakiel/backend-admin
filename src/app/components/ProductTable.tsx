@@ -1,5 +1,6 @@
 "use client";
 
+import axios from 'axios';
 import React from "react";
 import { Table, Stack, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -13,6 +14,14 @@ const ProductsTable: React.FC<Props> = ({ products }) => {
   // const onSelectAllClick = () => {};
   const numSelected = 0;
   const rowCount = 0;
+
+  const deleteProduct = async (id: string) => {
+    const response = await axios.delete(`https://backend-admin-eight.vercel.app/api/products/${id}`);
+  
+    if (response.status !== 200) {
+      throw new Error('Error');
+    }
+  };
 
   return (
     <TableContainer component={Paper}>
@@ -47,7 +56,7 @@ const ProductsTable: React.FC<Props> = ({ products }) => {
             <TableRow key={product.id}>
               <TableCell>
                 <IconButton aria-label="delete" size="large">
-                  <DeleteIcon fontSize="inherit" />
+                  <DeleteIcon onClick={() => deleteProduct(product.id)} fontSize="inherit" />
                 </IconButton>
               </TableCell>
               <TableCell>{product.id}</TableCell>
