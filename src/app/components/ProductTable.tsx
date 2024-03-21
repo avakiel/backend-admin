@@ -1,5 +1,7 @@
+"use client";
+
 import React from "react";
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton } from "@mui/material";
+import { Table, Stack, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { SelectedPhone } from "@/types/Product";
 
@@ -43,9 +45,11 @@ const ProductsTable: React.FC<Props> = ({ products }) => {
         <TableBody>
           {products.map((product) => (
             <TableRow key={product.id}>
-              <IconButton aria-label="delete" size="large">
-                <DeleteIcon fontSize="inherit" />
-              </IconButton>
+              <TableCell>
+                <IconButton aria-label="delete" size="large">
+                  <DeleteIcon fontSize="inherit" />
+                </IconButton>
+              </TableCell>
               <TableCell>{product.id}</TableCell>
               <TableCell>{product.name}</TableCell>
               <TableCell>{product.capacity}</TableCell>
