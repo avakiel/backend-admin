@@ -7,7 +7,7 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 const getProducts = async () => {
-  const products = await prisma.phone.findMany()
+  const products = await prisma.tablet.findMany()
   return products;
 };
 
