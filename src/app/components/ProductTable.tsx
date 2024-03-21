@@ -12,8 +12,6 @@ const ProductsTable: React.FC<Props> = ({ products }) => {
   const numSelected = 0;
   const rowCount = 0;
 
-  console.log(typeof products[0].priceRegular);
-
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650, backgroundColor: 'gray', padding: 2 }} aria-label="simple table">

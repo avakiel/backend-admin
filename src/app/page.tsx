@@ -1,9 +1,9 @@
-import ProductsTable from "./components/ProductTable";
-// import * as phonesData from "../../seed_data/products/index.json"
 import Header from "./components/Header";
 import Main from "./components/Main";
-
+import { redirect } from "next/navigation";
+import { getServerSession } from "next-auth"; 
 import { PrismaClient } from '@prisma/client'
+
 const prisma = new PrismaClient()
 
 const getProducts = async () => {
@@ -15,18 +15,16 @@ const getProducts = async () => {
 
 export default async function Home() {
   const products = await getProducts();
+  const session = await getServerSession();
 
-  console.log(typeof products[0].priceRegular);
+  if(!session || !session.user) {
+    redirect('api/auth/signin')
+  }
 
   return (
     <div>
       <Header />
-      <Main products={products} />
-
-        {/* <main>
-          <ProductsTable products={products} />
-        </main> */}
-      
+      <Main products={products} />    
     </div>
   );
 }
