@@ -13,7 +13,7 @@ const rowCount = 0;
 
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table sx={{ minWidth: 650, backgroundColor: 'gray', padding: 2 }} aria-label="simple table">
         <TableHead>
           <TableRow>
           {/* <TableCell padding="checkbox">

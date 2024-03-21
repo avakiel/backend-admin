@@ -1,7 +1,10 @@
-'use client'
+// import * as phonesData from "../../seed_data/products/index.json"
+import { useSession } from "next-auth/react";
+import Header from "./components/Header";
+import Main from "./components/Main";
 
-import ProductsTable from "./components/ProductTable";
-import { Nav } from "./components/nav";
+import { redirect } from "next/navigation";
+import { getServerSession } from "next-auth";
 
 const getProducts = () => {
   const products: any[] = [
@@ -1076,13 +1079,18 @@ const getProducts = () => {
   return products;
 }; /// TODO remove this mock up and use API
 
-export default function Home() {
+export default async function Home() {
   const products = getProducts();
+  const session = await getServerSession();
+
+  if(!session || !session.user) {
+    redirect('api/auth/signin')
+  }
 
   return (
-    <main>
-      <Nav />
-      <ProductsTable products={products} />
-    </main>
+    <div>
+      <Header />
+      <Main products={products} />    
+    </div>
   );
 }

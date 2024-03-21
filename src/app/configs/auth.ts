@@ -5,7 +5,15 @@ const users = [
   {
     email: 'vadik.sajnuykk@gmail.com',
     password: '123123'
-  }
+  },
+  {
+    email: 'ivan.kulikovsky.9970@gmail.com',
+    password: '123'
+  },
+  {
+    email: 'aleksandrrezanov17@gmail.com',
+    password: '123123123'
+  },
 ];
 
 export const authConfig: AuthOptions = {

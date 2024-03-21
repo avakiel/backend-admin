@@ -19,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
+        <Provider>
+          <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
+        </Provider>
       </body>
     </html>
   );
