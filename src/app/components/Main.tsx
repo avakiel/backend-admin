@@ -19,7 +19,7 @@ const Main: React.FC<Props> = ({ products }) => {
   const tabContents = [<ProductsTable products={products} key={'itemOne'} />, "Item Two", "Item Three"];
 
   return (
-    <Box sx={{ flexGrow: 1, display: 'flex', width: '100%', backgroundColor: 'DimGray' }}>
+    <Box sx={{ flexGrow: 1, display: 'flex', width: '100%', backgroundColor: 'DimGray', height: '100vh' }}>
       <Tabs
         orientation="vertical"
         variant="scrollable"
