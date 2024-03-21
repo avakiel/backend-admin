@@ -1,6 +1,9 @@
-import ProductsTable from "./components/ProductTable";
+'use client'
 
-const getProducts = async () => {
+import ProductsTable from "./components/ProductTable";
+import { Nav } from "./components/nav";
+
+const getProducts = () => {
   const products: any[] = [
     {
       "id": "1",
@@ -1073,11 +1076,12 @@ const getProducts = async () => {
   return products;
 }; /// TODO remove this mock up and use API
 
-export default async function Home() {
-  const products = await getProducts();
+export default function Home() {
+  const products = getProducts();
 
   return (
     <main>
+      <Nav />
       <ProductsTable products={products} />
     </main>
   );
