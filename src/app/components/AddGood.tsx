@@ -6,12 +6,11 @@ import {
   Typography,
   Modal,
   IconButton,
-  FilledInput,
+  Button,
   FormControl,
   FormHelperText,
   Input,
   InputLabel,
-  OutlinedInput
 } from '@mui/material';
 
 import AddIcon from '@mui/icons-material/Add';
@@ -21,7 +20,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  width: 800,
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
@@ -33,7 +32,30 @@ export default function AddGood() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const requiredDataToAddGood = ['Name', 'FullPrice', 'Price', 'Screen', 'Capacity', 'Ram', 'Year', 'Image'];
+  const requiredDataToAddGood = [
+    'namespaceId',
+    'name',
+    'capacityAvailable',
+    'capacity',
+    'priceRegular',
+    'priceDiscount',
+    'colorsAvailable',
+    'color',
+    'images',
+    'description',
+    'screen',
+    'resolution',
+    'processor',
+    'ram',
+    'camera',
+    'zoom',
+    'cell',
+    'year',
+  ];
+
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
 
   return (
     <div>
@@ -49,26 +71,25 @@ export default function AddGood() {
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Add new good
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
 
           <Box
             component="form"
             sx={{
               '& > :not(style)': { m: 1 },
+              marginBottom: 5,
             }}
             noValidate
             autoComplete="off"
+            onSubmit={handleFormSubmit}
           >
             {requiredDataToAddGood.map(item => (
-              <FormControl variant="standard" key={item}>
+              <FormControl variant="standard" key={item} required>
                 <InputLabel htmlFor="component-simple">{item}</InputLabel>
                 <Input id="component-simple" placeholder={item} />
               </FormControl>
             ))}
 
-            <FormControl error variant="standard">
+            {/* <FormControl error variant="standard">
               <InputLabel htmlFor="component-error">Name</InputLabel>
               <Input
                 id="component-error"
@@ -76,7 +97,15 @@ export default function AddGood() {
                 aria-describedby="component-error-text"
               />
               <FormHelperText id="component-error-text">Error</FormHelperText>
-            </FormControl>
+            </FormControl> */}
+
+            <Button
+              variant="contained"
+              type='submit'
+              sx={{position: 'absolute', right: 10, bottom: 10}}
+            >
+              Add good
+            </Button>
           </Box>
         </Box>
       </Modal>
