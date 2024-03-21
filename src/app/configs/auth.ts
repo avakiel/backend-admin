@@ -14,6 +14,10 @@ const users = [
     email: 'aleksandrrezanov17@gmail.com',
     password: '123123123'
   },
+  {
+    email: 'maxplay123890@gmail.com',
+    password: '0000'
+  },
 ];
 
 export const authConfig: AuthOptions = {
