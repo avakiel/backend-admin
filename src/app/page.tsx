@@ -11,8 +11,6 @@ const getProducts = async () => {
   return products;
 };
 
-
-
 export default async function Home() {
   const products = await getProducts();
   const session = await getServerSession();
