@@ -13,63 +13,85 @@ datasource db {
   url      = env("POSTGRES_PRISMA_URL")
 }
 
-model Phone {
-  	id String @id
-	namespaceId String
-	name String
-	capacityAvailable Json
-	capacity String
-	priceRegular Int
-	priceDiscount Int
-	colorsAvailable Json
-	color String
-	images Json
-	description Json
-	screen String
-	resolution String
-	processor String
-	ram String
-	camera String
-	zoom String
-	cell Json
-  }
+model Category {
+  id       Int       @id @default(autoincrement())
+  name     String
+  products Product[]
+}
 
-  model Accessory {
-	id String @id
-	namespaceId String
-	name String
-	capacityAvailable Json
-	capacity String
-	priceRegular Int
-	priceDiscount Int
-	colorsAvailable Json
-	color String
-	images Json
-	description Json
-	screen String
-	resolution String
-	processor String
-	ram String
-	cell Json
-  }
+model Product {
+  id         Int      @id @default(autoincrement())
+  itemId     String
+  name       String
+  fullPrice  Int
+  price      Int
+  screen     String
+  capacity   String
+  color      String
+  ram        String
+  year       Int
+  image      String
+  categoryId Int
+  category   Category @relation(fields: [categoryId], references: [id])
+}
 
-  model Tablet {
-	id String @id
-	namespaceId String
-	name String
-	capacityAvailable Json
-	capacity String
-	priceRegular Int
-	priceDiscount Int
-	colorsAvailable Json
-	color String
-	images Json
-	description Json
-	screen String
-	resolution String
-	processor String
-	ram String
-	camera String
-	zoom String
-	cell Json
-  }
+// model Phone {
+//   	id String @id
+// 	namespaceId String
+// 	name String
+// 	capacityAvailable Json
+// 	capacity String
+// 	priceRegular Int
+// 	priceDiscount Int
+// 	colorsAvailable Json
+// 	color String
+// 	images Json
+// 	description Json
+// 	screen String
+// 	resolution String
+// 	processor String
+// 	ram String
+// 	camera String
+// 	zoom String
+// 	cell Json
+//   }
+
+//   model Accessory {
+// 	id String @id
+// 	namespaceId String
+// 	name String
+// 	capacityAvailable Json
+// 	capacity String
+// 	priceRegular Int
+// 	priceDiscount Int
+// 	colorsAvailable Json
+// 	color String
+// 	images Json
+// 	description Json
+// 	screen String
+// 	resolution String
+// 	processor String
+// 	ram String
+// 	cell Json
+//   }
+
+//   model Tablet {
+// 	id String @id
+// 	namespaceId String
+// 	name String
+// 	capacityAvailable Json
+// 	capacity String
+// 	priceRegular Int
+// 	priceDiscount Int
+// 	colorsAvailable Json
+// 	color String
+// 	images Json
+// 	description Json
+// 	screen String
+// 	resolution String
+// 	processor String
+// 	ram String
+// 	camera String
+// 	zoom String
+// 	cell Json
+//   }
