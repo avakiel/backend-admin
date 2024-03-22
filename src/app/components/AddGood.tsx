@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 import {
   Box,
   Typography,
@@ -10,21 +10,21 @@ import {
   FormControl,
   FormHelperText,
   Input,
-  InputLabel,
-} from '@mui/material';
+  InputLabel
+} from "@mui/material";
 
-import AddIcon from '@mui/icons-material/Add';
+import AddIcon from "@mui/icons-material/Add";
 
 const style = {
-  position: 'absolute' as 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 800,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  bgcolor: "background.paper",
+  border: "2px solid #000",
   boxShadow: 24,
-  p: 4,
+  p: 4
 };
 
 export default function AddGood() {
@@ -33,24 +33,14 @@ export default function AddGood() {
   const handleClose = () => setOpen(false);
 
   const requiredDataToAddGood = [
-    'namespaceId',
-    'name',
-    'capacityAvailable',
-    'capacity',
-    'priceRegular',
-    'priceDiscount',
-    'colorsAvailable',
-    'color',
-    'images',
-    'description',
-    'screen',
-    'resolution',
-    'processor',
-    'ram',
-    'camera',
-    'zoom',
-    'cell',
-    'year',
+    "Name",
+    "Capacity",
+    "Price Regular",
+    "Price with Discount",
+    "Color",
+    "Screen",
+    "RAM",
+    "Year"
   ];
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -63,10 +53,7 @@ export default function AddGood() {
         <AddIcon />
       </IconButton>
 
-      <Modal
-        open={open}
-        onClose={handleClose}
-      >
+      <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Add new good
@@ -75,17 +62,17 @@ export default function AddGood() {
           <Box
             component="form"
             sx={{
-              '& > :not(style)': { m: 1 },
-              marginBottom: 5,
+              "& > :not(style)": { m: 1 },
+              marginBottom: 5
             }}
             noValidate
             autoComplete="off"
             onSubmit={handleFormSubmit}
           >
-            {requiredDataToAddGood.map(item => (
+            {requiredDataToAddGood.map((item) => (
               <FormControl variant="standard" key={item} required>
                 <InputLabel htmlFor="component-simple">{item}</InputLabel>
-                <Input id="component-simple" placeholder={item} />
+                <Input id="component-simple" />
               </FormControl>
             ))}
 
@@ -99,11 +86,7 @@ export default function AddGood() {
               <FormHelperText id="component-error-text">Error</FormHelperText>
             </FormControl> */}
 
-            <Button
-              variant="contained"
-              type='submit'
-              sx={{position: 'absolute', right: 10, bottom: 10}}
-            >
+            <Button variant="contained" type="submit" sx={{ position: "absolute", right: 10, bottom: 10 }}>
               Add good
             </Button>
           </Box>
