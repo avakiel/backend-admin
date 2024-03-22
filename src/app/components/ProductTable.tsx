@@ -3,10 +3,10 @@
 import React, { useState } from "react";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton, TablePagination } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
-import { SelectedPhone } from "@/types/Product";
+import { Product } from "@prisma/client";
 
 interface Props {
-  products: SelectedPhone[];
+  products: Product[];
 }
 
 const ProductsTable: React.FC<Props> = ({ products }) => {
@@ -40,12 +40,11 @@ const ProductsTable: React.FC<Props> = ({ products }) => {
               <TableCell>Name</TableCell>
               <TableCell>Capacity</TableCell>
               <TableCell>Price Regular</TableCell>
+              <TableCell>Price with Discount</TableCell>
               <TableCell>Color</TableCell>
               <TableCell>Screen</TableCell>
-              <TableCell>Resolution</TableCell>
-              <TableCell>Processor</TableCell>
               <TableCell>RAM</TableCell>
-              <TableCell>Camera</TableCell>
+              <TableCell>Year</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -59,13 +58,12 @@ const ProductsTable: React.FC<Props> = ({ products }) => {
                 <TableCell>{product.id}</TableCell>
                 <TableCell>{product.name}</TableCell>
                 <TableCell>{product.capacity}</TableCell>
-                <TableCell>{product.priceRegular}</TableCell>
+                <TableCell>{product.fullPrice}</TableCell>
+                <TableCell>{product.price}</TableCell>
                 <TableCell>{product.color}</TableCell>
                 <TableCell>{product.screen}</TableCell>
-                <TableCell>{product.resolution}</TableCell>
-                <TableCell>{product.processor}</TableCell>
                 <TableCell>{product.ram}</TableCell>
-                <TableCell>{product.camera}</TableCell>
+                <TableCell>{product.year}</TableCell>
               </TableRow>
             ))}
           </TableBody>

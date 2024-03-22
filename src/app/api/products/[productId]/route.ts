@@ -1,5 +1,7 @@
-import { Prisma } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 const requiredFields = ['id', 'category', 'phoneId', 'itemId', 'name', 'fullPrice', 'price', 'screen', 'capacity', 'color', 'ram', 'year', 'image'];
 
@@ -11,9 +13,9 @@ export async function GET(req: NextRequest, { params }: Params) {
       return new NextResponse("Product id is required", { status: 400 });
     }
 
-    const existingProduct = await Prisma.product.findUnique({
+    const existingProduct = await prisma.product.findUnique({
       where: {
-        id: params.productId
+        id: +params.productId
       }
     });
 
@@ -21,9 +23,9 @@ export async function GET(req: NextRequest, { params }: Params) {
       return new NextResponse("Product not found", { status: 404 });
     }
 
-    const product = await Prisma.product.findUnique({
+    const product = await prisma.product.findUnique({
       where: {
-        id: params.productId
+        id: +params.productId
       }
     });
 
@@ -40,18 +42,18 @@ export async function DELETE(req: NextRequest, { params }: Params) {
       return new NextResponse("Product id is required", { status: 400 });
     }
 
-    const existingProduct = await Prisma.product.findUnique({
+    const existingProduct = await prisma.product.findUnique({
       where: {
-        id: params.productId
+        id: +params.productId
       }
     });
 
     if (!existingProduct) {
       return new NextResponse("Product not found", { status: 404 });
     }
-    await Prisma.product.delete({
+    await prisma.product.delete({
       where: {
-        id: params.productId
+        id: +params.productId
       },
     });
 
@@ -69,9 +71,9 @@ export async function PATCH(req: NextRequest, { params }: Params) {
       return new NextResponse("Product id is required", { status: 400 });
     }
 
-    const existingProduct = await Prisma.product.findUnique({
+    const existingProduct = await prisma.product.findUnique({
       where: {
-        id: params.productId
+        id: +params.productId
       }
     });
 
@@ -85,9 +87,9 @@ export async function PATCH(req: NextRequest, { params }: Params) {
       }
     }
 
-    const product = await Prisma.product.update({
+    const product = await prisma.product.update({
       where: {
-        id: params.productId
+        id: +params.productId
       },
       data: {
         ...body,

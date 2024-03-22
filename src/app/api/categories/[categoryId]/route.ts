@@ -1,5 +1,7 @@
-import { Prisma } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
 
 interface Params { params: { categoryId: string } };
  
@@ -9,7 +11,7 @@ export async function GET(req: NextRequest, { params }: Params) {
             return new NextResponse("Category id is required", { status: 400 });
         }
 
-        const category = await Prisma.category.findUnique({ where: { id: params.categoryId } })
+        const category = await prisma.category.findUnique({ where: { id: +params.categoryId } })
 
         if (!category) {
             return new NextResponse("Category not found", { status: 404 })
@@ -26,15 +28,15 @@ export async function DELETE(req: NextRequest, { params }: Params) {
             return new NextResponse("Category id is required", { status: 400 });
         }
 
-        const category = await Prisma.category.findUnique({ where: { id: params.categoryId } })
+        const category = await prisma.category.findUnique({ where: { id: +params.categoryId } })
 
         if (!category) {
             return new NextResponse("Category not found", { status: 404 })
         }
 
-        await Prisma.category.delete({
+        await prisma.category.delete({
             where: {
-                id: params.categoryId
+                id: +params.categoryId
             },
         });
 
@@ -55,15 +57,15 @@ export async function PATCH(req: NextRequest, { params }: Params) {
             return new NextResponse("Category id is required", { status: 400 });
         }
 
-        const existingCategory = await Prisma.category.findUnique({ where: { id: params.categoryId } })
+        const existingCategory = await prisma.category.findUnique({ where: { id: +params.categoryId } })
 
         if (!existingCategory) {
             return new NextResponse("Category not found", { status: 404 })
         }
 
-        const category = await Prisma.category.update({
+        const category = await prisma.category.update({
             where: {
-                id: params.categoryId
+                id: +params.categoryId
             },
             data: { name },
         });

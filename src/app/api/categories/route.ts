@@ -1,9 +1,11 @@
-import { Prisma } from "@prisma/client";
+import { PrismaClient } from '@prisma/client';
 import { NextRequest, NextResponse } from "next/server";
+
+const prisma = new PrismaClient();
 
 export async function GET() {
     try {
-        const categories = await Prisma.category.findMany()
+        const categories = await prisma.category.findMany()
         return NextResponse.json(categories)
     } catch (error) {
         return new NextResponse('Internal error', { status: 500 })
@@ -20,15 +22,15 @@ export async function POST(req: NextRequest) {
             return new NextResponse("Name is required", { status: 400 });
         }
 
-        const existingCategory = await Prisma.category.findFirst({ where: { name } });
+        const existingCategory = await prisma.category.findFirst({ where: { name } });
 
         if (existingCategory) {
             return new NextResponse("Category already exists", { status: 409 });
         }
 
-        const category = await Prisma.category.create({
+        const category = await prisma.category.create({
             data: {
-                name
+              name
             },
         });
 
@@ -36,5 +38,4 @@ export async function POST(req: NextRequest) {
     } catch (error) {
         return new NextResponse('Internal error', { status: 500 })
     }
-
 }
