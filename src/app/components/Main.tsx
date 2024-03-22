@@ -6,7 +6,7 @@ import ProductsTable from './ProductTable';
 import { Product, SelectedPhone } from '@/types/Product';
 
 interface Props {
-  products: SelectedPhone[];
+  products: any;
 }
 
 const Main: React.FC<Props> = ({ products }) => {
