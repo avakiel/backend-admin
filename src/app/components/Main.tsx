@@ -3,10 +3,10 @@
 import React, { useState } from 'react';
 import { Tabs, Tab, Typography, Box } from '@mui/material';
 import ProductsTable from './ProductTable';
-import { Product, SelectedPhone } from '@/types/Product';
+import { Product } from '@prisma/client';
 
 interface Props {
-  products: any;
+  products: Product[];
 }
 
 const Main: React.FC<Props> = ({ products }) => {
@@ -34,7 +34,6 @@ const Main: React.FC<Props> = ({ products }) => {
       </Tabs>
       {tabContents[value]}
     </Box>
-
   );
 };
 
