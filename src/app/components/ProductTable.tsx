@@ -4,12 +4,14 @@ import React, { useState } from "react";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton, TablePagination } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Product } from "@prisma/client";
+import axios from "axios";
 
 interface Props {
   products: Product[];
+  deleteProduct: (id: number) => void
 }
 
-const ProductsTable: React.FC<Props> = ({ products }) => {
+const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
   const [page, setPage] = useState(0);
   
   const handleChangePage = (event: unknown, newPage: number) => {
@@ -37,7 +39,7 @@ const ProductsTable: React.FC<Props> = ({ products }) => {
             {products.slice(page * 15, page * 15 + 15).map((product) => (
               <TableRow key={product.id}>
                 <TableCell>
-                  <IconButton aria-label="delete" size="large">
+                  <IconButton aria-label="delete" size="large" onClick={() => deleteProduct(product.id)}>
                     <DeleteIcon fontSize="inherit" />
                   </IconButton>
                 </TableCell>
