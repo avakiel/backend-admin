@@ -7,11 +7,7 @@ import { Product } from "@prisma/client";
 import axios from "axios";
 import CircularProgress from "@mui/material/CircularProgress";
 
-interface Props {
-  products: Product[];
-}
-
-const Main: React.FC<Props> = ({ products }) => {
+const Main: React.FC = () => {
   const [currentCategory, setCurrentCategory] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false);
 
@@ -35,6 +31,19 @@ const Main: React.FC<Props> = ({ products }) => {
     setValue(newValue);
   };
 
+  const deleteProduct = (id: number) => {
+    setLoading(true);
+
+    axios.delete(`/api/products/${id}`)
+    .then((response) => {
+      setCurrentCategory((prevProducts) => prevProducts.filter((product) => product.id !== id)); 
+    })
+    .catch(() => {
+      throw Error();
+    })
+    .finally(() => setLoading(false))
+  };
+
   return (
     <Box sx={{ flexGrow: 1, display: "flex", width: "100%", backgroundColor: "DimGray", height: "100vh" }}>
       <Tabs
@@ -55,7 +64,7 @@ const Main: React.FC<Props> = ({ products }) => {
           <CircularProgress />
         </Box>
       ) : (
-        <ProductsTable products={currentCategory} key={"itemOne"} />
+        <ProductsTable products={currentCategory} deleteProduct={deleteProduct} />
       )}
     </Box>
   );

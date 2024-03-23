@@ -15,10 +15,12 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import '@fortawesome/fontawesome-free/css/all.css';
 import { Product } from "@prisma/client";
+import axios from "axios";
 import classNames from "classnames";
 
 interface Props {
   products: Product[];
+  deleteProduct: (id: number) => void
 }
 
 const sortFields = [
@@ -45,11 +47,7 @@ enum SortOrder {
   Descending = "desc"
 }
 
-const ProductsTable: React.FC<Props> = ({ products }) => {
-  // const onSelectAllClick = () => {};
-  const numSelected = 0;
-  const rowCount = 0;
-
+const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
   const [page, setPage] = useState(0);
   const [sortParams, setSortOrder] = useState<SortOrderState>({
     field: "ID",
@@ -186,7 +184,7 @@ const ProductsTable: React.FC<Props> = ({ products }) => {
           {(renderProduct).map((product) => (
             <TableRow key={product.id}>
               <TableCell align="center" width={'5%'}>
-                <IconButton aria-label="delete" size="large">
+                <IconButton aria-label="delete" size="large" onClick={() => deleteProduct(product.id)}>
                   <DeleteIcon fontSize="inherit" />
                 </IconButton>
               </TableCell>
