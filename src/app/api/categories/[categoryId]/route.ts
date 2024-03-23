@@ -16,7 +16,14 @@ export async function GET(req: NextRequest, { params }: Params) {
         if (!category) {
             return new NextResponse("Category not found", { status: 404 })
         }
-        return NextResponse.json(category)
+
+        const products = await prisma.product.findMany({
+          where: {
+            categoryId: category.id
+          }
+        });
+
+        return NextResponse.json(products)
     } catch (error) {
         return new NextResponse('Internal error', { status: 500 })
     }
