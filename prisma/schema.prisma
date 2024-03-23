@@ -17,7 +17,6 @@ datasource db {
 model Category {
   id       Int       @id @default(autoincrement())
   name     String
-  products Product[]
 }
 
 model Product {
@@ -33,7 +32,6 @@ model Product {
   year       Int
   image      String
   categoryId Int
-  category   Category @relation(fields: [categoryId], references: [id])
 }
 
 // model Phone {

@@ -46,8 +46,8 @@ const Main: React.FC<Props> = ({ products }) => {
         sx={{ borderRight: 1, borderColor: "divider", "& .MuiTabs-indicator": { backgroundColor: "white", width: 5 } }}
       >
         <Tab label="Phones" style={{ color: value === 0 ? "white" : "black" }} />
-        <Tab label="Tablets" style={{ color: value === 1 ? "white" : "black" }} />
-        <Tab label="Accessories" style={{ color: value === 2 ? "white" : "black" }} />
+        <Tab label="Accessories" style={{ color: value === 1 ? "white" : "black" }} />
+        <Tab label="Tablets" style={{ color: value === 2 ? "white" : "black" }} />
       </Tabs>
 
       {loading ? (

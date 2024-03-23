@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import {
   Box,
   Typography,
@@ -10,11 +11,26 @@ import {
   FormControl,
   FormHelperText,
   Input,
-  InputLabel
+  InputLabel,
+  Select,
+  MenuItem
 } from "@mui/material";
-
 import AddIcon from "@mui/icons-material/Add";
+import { Category } from "@prisma/client";
+import { normalizeField } from "../utils/normalizeField";
+import { getItemId } from "../utils/getItemId";
+import CircularProgress from "@mui/material/CircularProgress";
 
+const availableRam = {
+  phones: ["4GB", "8GB", "16GB", "32GB"],
+  accessories: ["0.75GB", "1GB"],
+  tablets: ["4GB", "8GB", "16GB", "32GB"]
+};
+const availableCapacity: AvailableFields = {
+  phones: ["32Gb", "62GB", "128GB", "256GB", "512GB"],
+  accessories: ["38mm", "40mm", "42mm", "44mm"],
+  tablets: ["62GB", "128GB", "256GB", "512GB", "1TB"]
+};
 const style = {
   position: "absolute" as "absolute",
   top: "50%",
@@ -26,25 +42,177 @@ const style = {
   boxShadow: 24,
   p: 4
 };
+const initialValues: Values = {
+  name: "",
+  priceRegular: "",
+  priceWithDiscount: "",
+  color: "",
+  screen: "",
+  year: "",
+  image: ""
+}
+const initialErrors = {
+  name: "",
+  priceRegular: "",
+  priceWithDiscount: "",
+  color: "",
+  screen: "",
+  year: "",
+  image: "",
+  capacity: "",
+  ram: "",
+  category: ""
+}
+
+interface Values {
+  name: string;
+  priceRegular: string;
+  priceWithDiscount: string;
+  color: string;
+  screen: string;
+  year: string;
+  image: string;
+}
+
+interface Errors {
+  name: string;
+  priceRegular: string;
+  priceWithDiscount: string;
+  color: string;
+  screen: string;
+  year: string;
+  image: string;
+  capacity: string;
+  ram: string;
+  category: string;
+}
+
+interface AvailableFields {
+  phones: string[];
+  accessories: string[];
+  tablets: string[];
+}
 
 export default function AddGood() {
+  const [values, setValues] = useState(initialValues);
+  const [capacity, setCapacity] = useState("");
+  const [ram, setRam] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [category, setCategory] = useState("");
+  const categoryID = categories.find((cat) => cat.name === category)?.id;
+
+  const [errors, setErrors] = useState(initialErrors);
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const requiredDataToAddGood = [
-    "Name",
-    "Capacity",
-    "Price Regular",
-    "Price with Discount",
-    "Color",
-    "Screen",
-    "RAM",
-    "Year"
-  ];
+  useEffect(() => {
+    axios
+      .get("/api/categories")
+      .then((response) => setCategories(response.data))
+      .catch(() => {
+        throw Error();
+      });
+  }, []);
+  
+  const handleChange = (event: any) => {
+    const { name, value } = event.target;
+    setValues({
+      ...values,
+      [name]: value
+    });
+    if (!value) {
+      setErrors({
+        ...errors,
+        [name]: 'This field is required'
+      });
+    } else {
+      setErrors({
+        ...errors,
+        [name]: ''
+      });
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors: Errors = {} as Errors;
+    let formIsValid = true;
+    const fieldsToCheck = ['priceRegular', 'priceWithDiscount', 'year'];
+
+    Object.keys(values).forEach((key) => {
+      if (!values[key as keyof Values]) {
+        newErrors[key as keyof Errors] = "This field is required";
+        formIsValid = false;
+      }
+
+      if (fieldsToCheck.includes(key) && isNaN(+values[key as keyof Values])) {
+        newErrors[key as keyof Errors] = "This field is not a number";
+        formIsValid = false;
+      }
+    });
+
+    if (!capacity) {
+      newErrors.capacity = "This field is required";
+      formIsValid = false;
+    }
+    if (!ram) {
+      newErrors.ram = "This field is required";
+      formIsValid = false;
+    }
+    if (!category) {
+      newErrors.category = "This field is required";
+      formIsValid = false;
+    }
+
+    setErrors(newErrors);
+
+    return formIsValid;
+  };
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setLoading(true);
+
+    if (validateForm()) {
+      const newProduct = {
+        itemId: getItemId(values.name),
+        name: values.name,
+        fullPrice: +values.priceRegular,
+        price: +values.priceWithDiscount,
+        screen: values.screen,
+        capacity,
+        color: values.color,
+        ram,
+        year: +values.year,
+        image: values.image,
+        categoryId: categoryID as number
+      };
+
+      axios
+        .post("/api/products", newProduct)
+        .then(() => {
+          handleClose();
+          resetForm();
+        })
+        .catch((error) => {
+          throw new Error();
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    } else {
+      setLoading(false);
+    }
+  };
+
+  const resetForm = () => {
+    setValues(initialValues);
+    setCapacity('');
+    setCategory('');
+    setRam('');
   };
 
   return (
@@ -55,8 +223,8 @@ export default function AddGood() {
 
       <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Add new good
+          <Typography sx={{ color: "black" }} id="modal-modal-title" variant="h6" component="h2">
+            Add new product
           </Typography>
 
           <Box
@@ -69,25 +237,123 @@ export default function AddGood() {
             autoComplete="off"
             onSubmit={handleFormSubmit}
           >
-            {requiredDataToAddGood.map((item) => (
-              <FormControl variant="standard" key={item} required>
-                <InputLabel htmlFor="component-simple">{item}</InputLabel>
-                <Input id="component-simple" />
+            <FormControl sx={{ width: "100%" }} variant="standard" required>
+              <InputLabel id="category">Category</InputLabel>
+              <Select
+                name="category"
+                labelId="category"
+                id="category"
+                value={category}
+                label="category"
+                onChange={(event) => {
+                  const { name, value } = event.target;
+                  setCategory(value);
+
+                  if(!value) {
+                    setErrors({
+                      ...errors,
+                      [name]: "This field is required"
+                    });
+                  } else {
+                    setErrors({
+                      ...errors,
+                      [name]: ""
+                    });
+                  }
+                }}
+              >
+                {categories.map((category) => (
+                  <MenuItem key={category.id} value={category.name}>
+                    {category.name}
+                  </MenuItem>
+                ))}
+              </Select>
+              {errors.category && <FormHelperText sx={{ color: "red" }}>{errors.category}</FormHelperText>}
+            </FormControl>
+            {Object.keys(values).map((key) => (
+              <FormControl variant="standard" key={key} required>
+                <InputLabel htmlFor={key}>{normalizeField(key)}</InputLabel>
+                <Input id={key} name={key} value={values[key as keyof Values]} onChange={handleChange} />
+
+                {errors[key as keyof Values] && <FormHelperText sx={{ color: "red" }}>{errors[key as keyof Errors]}</FormHelperText>}
               </FormControl>
             ))}
 
-            {/* <FormControl error variant="standard">
-              <InputLabel htmlFor="component-error">Name</InputLabel>
-              <Input
-                id="component-error"
-                defaultValue="Composed TextField"
-                aria-describedby="component-error-text"
-              />
-              <FormHelperText id="component-error-text">Error</FormHelperText>
-            </FormControl> */}
+            <FormControl sx={{ width: "100%" }} variant="standard" required>
+              <InputLabel id="capacity">Capacity</InputLabel>
+              <Select
+                name="capacity"
+                labelId="capacity"
+                id="capacity"
+                value={capacity}
+                label="capacity"
+                onChange={(event) => {
+                  const { name, value } = event.target;
+                  setCapacity(value);
 
-            <Button variant="contained" type="submit" sx={{ position: "absolute", right: 10, bottom: 10 }}>
-              Add good
+                  if(!value) {
+                    setErrors({
+                      ...errors,
+                      [name]: "This field is required"
+                    });
+                  } else {
+                    setErrors({
+                      ...errors,
+                      [name]: ""
+                    });
+                  }
+                }}
+              >
+                {category && availableCapacity[category as keyof AvailableFields].map((cap) => (
+                    <MenuItem key={cap} value={cap}>
+                      {cap}
+                    </MenuItem>
+                  ))}
+                {!availableCapacity[category as keyof AvailableFields] && <MenuItem disabled>Select category</MenuItem>}
+              </Select>
+              {errors.capacity && <FormHelperText sx={{ color: "red" }}>{errors.capacity}</FormHelperText>}
+            </FormControl>
+            <FormControl sx={{ width: "100%" }} variant="standard" required>
+              <InputLabel id="ram">RAM</InputLabel>
+              <Select
+                name="ram"
+                labelId="ram"
+                id="ram"
+                value={ram}
+                label="ram"
+                onChange={(event) => {
+                  const { name, value } = event.target;
+                  setRam(value);
+
+                  if(!value) {
+                    setErrors({
+                      ...errors,
+                      [name]: "This field is required"
+                    });
+                  } else {
+                    setErrors({
+                      ...errors,
+                      [name]: ""
+                    });
+                  }
+                }}
+              >
+                {category && availableRam[category as keyof AvailableFields].map((cap) => (
+                    <MenuItem key={cap} value={cap}>
+                      {cap}
+                    </MenuItem>
+                  ))}
+                {!availableCapacity[category as keyof AvailableFields] && <MenuItem disabled>Select category</MenuItem>}
+              </Select>
+              {errors.ram && <FormHelperText sx={{ color: "red" }}>{errors.ram}</FormHelperText>}
+            </FormControl>
+
+            <Button
+              variant="contained"
+              type="submit"
+              sx={{ width: "15%", height: "9%", position: "absolute", right: 10, bottom: 10 }}
+            >
+              {loading ? <CircularProgress sx={{ color: "white" }} /> : "Add good"}
             </Button>
           </Box>
         </Box>

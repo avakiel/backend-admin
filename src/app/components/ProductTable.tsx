@@ -10,10 +10,6 @@ interface Props {
 }
 
 const ProductsTable: React.FC<Props> = ({ products }) => {
-  // const onSelectAllClick = () => {};
-  const numSelected = 0;
-  const rowCount = 0;
-
   const [page, setPage] = useState(0);
   
   const handleChangePage = (event: unknown, newPage: number) => {
@@ -21,21 +17,11 @@ const ProductsTable: React.FC<Props> = ({ products }) => {
   };
 
   return (
-      <TableContainer component={Paper} style={{ width: '100%' }}>
+      <TableContainer component={Paper} >
         <Table sx={{ minWidth: 650, backgroundColor: 'gray', padding: 2 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-               {/* <TableCell padding="checkbox">
-              <Checkbox
-                color="primary"
-                indeterminate={numSelected > 0 && numSelected < rowCount}
-                checked={rowCount > 0 && numSelected === rowCount}
-                inputProps={{
-                  'aria-label': 'select all desserts',
-                }}
-            />
-          </TableCell> */}
-              <TableCell>Delete</TableCell>
+              <TableCell></TableCell>
               <TableCell>ID</TableCell>
               <TableCell>Name</TableCell>
               <TableCell>Capacity</TableCell>
