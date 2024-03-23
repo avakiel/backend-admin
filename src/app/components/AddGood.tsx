@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import {
   Box,
   Typography,
@@ -10,10 +11,13 @@ import {
   FormControl,
   FormHelperText,
   Input,
-  InputLabel
+  InputLabel,
+  Select,
+  MenuItem
 } from "@mui/material";
 
 import AddIcon from "@mui/icons-material/Add";
+import { Category, Product } from "@prisma/client";
 
 const style = {
   position: "absolute" as "absolute",
@@ -28,24 +32,47 @@ const style = {
 };
 
 export default function AddGood() {
+  const [values, setValues] = useState({
+    name: "",
+    capacity: "",
+    priceRegular: "",
+    priceWithDiscount: "",
+    color: "",
+    screen: "",
+    ram: "",
+    year: ""
+  });
+
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [category, setCategory] = useState("");
+
+  const handleChange = (event: any) => {
+    setValues({
+      ...values,
+      [event.target.name]: event.target.value
+    });
+  };
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const requiredDataToAddGood = [
-    "Name",
-    "Capacity",
-    "Price Regular",
-    "Price with Discount",
-    "Color",
-    "Screen",
-    "RAM",
-    "Year"
-  ];
-
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const newProduct: Product = {
+
+    }
   };
+
+  useEffect(() => {
+    axios
+      .get("/api/categories")
+      .then((response) => setCategories(response.data))
+      .catch(() => {
+        throw Error();
+      });
+  }, []);
 
   return (
     <div>
@@ -55,8 +82,8 @@ export default function AddGood() {
 
       <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Add new good
+          <Typography sx={{ color: "black" }} id="modal-modal-title" variant="h6" component="h2">
+            Add new product
           </Typography>
 
           <Box
@@ -69,10 +96,26 @@ export default function AddGood() {
             autoComplete="off"
             onSubmit={handleFormSubmit}
           >
-            {requiredDataToAddGood.map((item) => (
-              <FormControl variant="standard" key={item} required>
-                <InputLabel htmlFor="component-simple">{item}</InputLabel>
-                <Input id="component-simple" />
+            <FormControl sx={{ width: "100%" }} variant="standard" required>
+              <InputLabel id="category">Category</InputLabel>
+              <Select
+                labelId="category"
+                id="category"
+                value={category}
+                label="category"
+                onChange={(event) => setCategory(event.target.value)}
+              >
+                {categories.map((category) => (
+                  <MenuItem key={category.id} value={category.name}>
+                    {category.name}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+            {Object.keys(values).map((key) => (
+              <FormControl variant="standard" key={key} required>
+                <InputLabel htmlFor={key}>{key}</InputLabel>
+                <Input id={key} name={key} value={values[key]} onChange={handleChange} />
               </FormControl>
             ))}
 
