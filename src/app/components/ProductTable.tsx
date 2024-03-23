@@ -15,7 +15,7 @@ const ProductsTable: React.FC<Props> = ({ products }) => {
   const rowCount = 0;
 
   const [page, setPage] = useState(0);
-
+  
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
   };
