@@ -10,7 +10,7 @@ import AddGood from "./AddGood";
 const Header: React.FC = () => {
   const session = useSession();
 
-  console.log(session);
+  // console.log(session);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
