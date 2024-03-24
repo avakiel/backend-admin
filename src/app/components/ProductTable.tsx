@@ -24,6 +24,8 @@ import { colors } from "../color-palette/colors";
 interface Props {
   products: Product[];
   deleteProduct: (id: number) => void;
+  handleAlert: () => void;
+  updateProduct: (id: string, productToUpdate: any, handleClose: any, resetForm: any, setLoading: any) => void
 }
 
 const sortFields = [
@@ -51,7 +53,7 @@ enum SortOrder {
   Descending = "desc"
 }
 
-const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
+const ProductsTable: React.FC<Props> = ({ products, deleteProduct, updateProduct, handleAlert }) => {
   const [openModal, setOpenModal] = React.useState(false);
   const [editingProduct, setEditingProduct] = React.useState({} as Product);
 
@@ -230,7 +232,7 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
         </TableBody>
       </Table>
       {openModal && (
-        <FormProduct product={formatProduct(editingProduct)} openModal={openModal} handleClose={handleClose} />
+        <FormProduct product={formatProduct(editingProduct)} updateProduct={updateProduct} openModal={openModal} handleClose={handleClose} handleAlert={handleAlert} />
       )}
       <TablePagination
         rowsPerPage={15}
