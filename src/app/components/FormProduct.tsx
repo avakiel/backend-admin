@@ -111,11 +111,13 @@ interface Props {
   product: EditProduct;
   openModal: boolean;
   handleClose: () => void;
+  handleAlert: () => void;
+  updateProduct?: (id: any, productToUpdate: any, handleClose: any, resetForm: any, setLoading: any) => void
 }
 
 type PropsValues = Omit<EditProduct, "id" | "categoryId" | "capacity" | "ram" | 'itemId'>;
 
-const FormProduct: React.FC<Props> = ({ product, openModal, handleClose }) => {
+const FormProduct: React.FC<Props> = ({ product, openModal, handleClose, handleAlert, updateProduct = () => {} }) => {
   const existProduct = Object.keys(product).length !== 0;
   const valuesFromProduct = {
     name: product.name,
@@ -242,6 +244,7 @@ const FormProduct: React.FC<Props> = ({ product, openModal, handleClose }) => {
           .then(() => {
             handleClose();
             resetForm();
+            handleAlert();
           })
           .catch((error) => {
             throw new Error();
@@ -250,7 +253,7 @@ const FormProduct: React.FC<Props> = ({ product, openModal, handleClose }) => {
             setLoading(false);
           });
       } else {
-        const productToUpdate = {
+        const productToUpdate: any = {
           name: values.name,
           itemId: product.itemId,
           fullPrice: +values.priceRegular,
@@ -264,18 +267,7 @@ const FormProduct: React.FC<Props> = ({ product, openModal, handleClose }) => {
           categoryId: categoryID as number
         };
 
-        axios
-          .patch(`/api/products/${product.id}`, productToUpdate)
-          .then(() => {
-            handleClose();
-            resetForm();
-          })
-          .catch((error) => {
-            throw new Error();
-          })
-          .finally(() => {
-            setLoading(false);
-          });
+        updateProduct(product.id, productToUpdate, handleClose, resetForm, setLoading);
       }
     } else {
       setLoading(false);
