@@ -5,7 +5,7 @@ import { AppBar, Box, Toolbar, Typography, IconButton } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
-import FormProduct from "./FormProduct";
+import FormProduct, { EditProduct } from "./FormProduct";
 
 const Header: React.FC = () => {
   const session = useSession();
@@ -16,7 +16,7 @@ const Header: React.FC = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: "DimGray", borderBottom: "1px solid white" }}>
         <Toolbar>
-          <FormProduct />
+          <FormProduct product={{} as EditProduct}/>
 
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             New

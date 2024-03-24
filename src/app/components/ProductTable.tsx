@@ -45,9 +45,9 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
                     <DeleteIcon fontSize="inherit" />
                   </IconButton>
                 </TableCell>
-                {/* <TableCell>
+                <TableCell>
                   <FormProduct product={formatProduct(product)} />
-                </TableCell> */}
+                </TableCell>
                 <TableCell>{product.id}</TableCell>
                 <TableCell>{product.name}</TableCell>
                 <TableCell>{product.capacity}</TableCell>

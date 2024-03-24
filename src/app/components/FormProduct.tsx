@@ -22,12 +22,12 @@ import { getItemId } from "../utils/getItemId";
 import CircularProgress from "@mui/material/CircularProgress";
 
 const availableRam = {
-  phones: ["4GB", "8GB", "16GB", "32GB"],
-  accessories: ["0.75GB", "1GB"],
+  phones: ["2GB", "3GB", "4GB", "8GB", "16GB", "32GB"],
+  accessories: ["768MB", "0.75GB", "1GB"],
   tablets: ["4GB", "8GB", "16GB", "32GB"]
 };
 const availableCapacity: AvailableFields = {
-  phones: ["32Gb", "62GB", "128GB", "256GB", "512GB"],
+  phones: ["32GB", "64GB", "128GB", "256GB", "512GB"],
   accessories: ["38mm", "40mm", "42mm", "44mm"],
   tablets: ["62GB", "128GB", "256GB", "512GB", "1TB"]
 };
@@ -128,32 +128,12 @@ const FormProduct: React.FC<Props> = ({ product }) => {
   const [capacity, setCapacity] = useState(existProduct ? product.capacity : "");
   const [ram, setRam] = useState(existProduct ? product.ram : "");
 
-  console.log(capacity, ram)
   const [loading, setLoading] = useState(false);
+  const [blockActions, setBlockActions] = useState(false);
 
   const [categories, setCategories] = useState<Category[]>([]);
 
-  let categoryEditingProduct = useMemo(() => {
-    let result = {
-      id: 0,
-      name: ""
-    };
-  
-    if (existProduct) {
-      const foundCategory = categories.find((category) => category.id === +product.categoryId);
-      if (foundCategory) {
-        result = {
-          id: foundCategory.id,
-          name: foundCategory.name
-        };
-      }
-    }
-  
-    return result;
-  }, []);
-  
-  const [category, setCategory] = useState(categoryEditingProduct.name ? categoryEditingProduct.name : "");
-  console.log(category)
+  const [category, setCategory] = useState("");
   const categoryID = categories.find((cat) => cat.name === category)?.id;
 
   const [errors, setErrors] = useState(initialErrors);
@@ -163,11 +143,24 @@ const FormProduct: React.FC<Props> = ({ product }) => {
   const handleClose = () => setOpen(false);
 
   useEffect(() => {
+    setBlockActions(true);
     axios
       .get("/api/categories")
-      .then((response) => setCategories(response.data))
+      .then((response) => {
+        setCategories(response.data);
+
+        if (existProduct) {
+          const foundCategory = response.data.find((category: any) => category.id === +product.categoryId);
+          if (foundCategory) {
+            setCategory(foundCategory.name);
+          }
+        }
+      })
       .catch(() => {
         throw Error();
+      })
+      .finally(() => {
+        setBlockActions(false);
       });
   }, []);
 
@@ -277,7 +270,7 @@ const FormProduct: React.FC<Props> = ({ product }) => {
       <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
           <Typography sx={{ color: "black" }} id="modal-modal-title" variant="h6" component="h2">
-            {categoryEditingProduct ? `Edit ${categoryEditingProduct.name} product` : "Add new product"}
+            {existProduct ? `Edit ${category} product` : "Add new product"}
           </Typography>
 
           <Box
@@ -298,6 +291,7 @@ const FormProduct: React.FC<Props> = ({ product }) => {
                 id="category"
                 value={category}
                 label="category"
+                disabled={existProduct}
                 onChange={(event) => {
                   const { name, value } = event.target;
                   setCategory(value);
@@ -335,79 +329,92 @@ const FormProduct: React.FC<Props> = ({ product }) => {
             ))}
 
             <FormControl sx={{ width: "100%" }} variant="standard" required>
-              <InputLabel id="capacity">Capacity</InputLabel>
-              {/* <Select
-                name="capacity"
-                labelId="capacity"
-                id="capacity"
-                value={capacity}
-                label="capacity"
-                onChange={(event) => {
-                  const { name, value } = event.target;
-                  setCapacity(value);
+              {category && (
+                <>
+                <InputLabel id="capacity">Capacity</InputLabel>
+                <Select
+                  name="capacity"
+                  labelId="capacity"
+                  id="capacity"
+                  value={capacity}
+                  label="capacity"
+                  onChange={(event) => {
+                    const { name, value } = event.target;
+                    setCapacity(value);
 
-                  if (!value) {
-                    setErrors({
-                      ...errors,
-                      [name]: "This field is required"
-                    });
-                  } else {
-                    setErrors({
-                      ...errors,
-                      [name]: ""
-                    });
-                  }
-                }}
-              >
-                {category &&
-                  availableCapacity[category as keyof AvailableFields].map((cap) => (
-                    <MenuItem key={cap} value={cap}>
-                      {cap}
-                    </MenuItem>
-                  ))}
-                {!availableCapacity[category as keyof AvailableFields] && <MenuItem disabled>Select category</MenuItem>}
-              </Select> */}
+                    if (!value) {
+                      setErrors({
+                        ...errors,
+                        [name]: "This field is required"
+                      });
+                    } else {
+                      setErrors({
+                        ...errors,
+                        [name]: ""
+                      });
+                    }
+                  }}
+                >
+                  {category && 
+                    availableCapacity[category as keyof AvailableFields].map((cap) => (
+                      <MenuItem key={cap} value={cap}>
+                        {cap}
+                      </MenuItem>
+                    ))}
+                  {!category && (
+                    <MenuItem disabled>Select category</MenuItem>
+                  )}
+                </Select>
+                </>
+              )}
               {errors.capacity && <FormHelperText sx={{ color: "red" }}>{errors.capacity}</FormHelperText>}
             </FormControl>
             <FormControl sx={{ width: "100%" }} variant="standard" required>
-              <InputLabel id="ram">RAM</InputLabel>
-              {/* <Select
-                name="ram"
-                labelId="ram"
-                id="ram"
-                value={ram}
-                label="ram"
-                onChange={(event) => {
-                  const { name, value } = event.target;
-                  setRam(value);
+              {category && (
+                <>
+                <InputLabel id="ram">RAM</InputLabel>
+                <Select
+                  name="ram"
+                  labelId="ram"
+                  id="ram"
+                  value={ram}
+                  label="ram"
+                  onChange={(event) => {
+                    const { name, value } = event.target;
+                    setRam(value);
 
-                  if (!value) {
-                    setErrors({
-                      ...errors,
-                      [name]: "This field is required"
-                    });
-                  } else {
-                    setErrors({
-                      ...errors,
-                      [name]: ""
-                    });
-                  }
-                }}
-              >
-                {category &&
-                  availableRam[category as keyof AvailableFields].map((cap) => (
-                    <MenuItem key={cap} value={cap}>
-                      {cap}
-                    </MenuItem>
-                  ))}
-                {!availableCapacity[category as keyof AvailableFields] && <MenuItem disabled>Select category</MenuItem>}
-              </Select> */}
+                    if (!value) {
+                      setErrors({
+                        ...errors,
+                        [name]: "This field is required"
+                      });
+                    } else {
+                      setErrors({
+                        ...errors,
+                        [name]: ""
+                      });
+                    }
+                  }}
+                >
+                  {category &&
+                    availableRam[category as keyof AvailableFields].map((cap) => (
+                      <MenuItem key={cap} value={cap}>
+                        {cap}
+                      </MenuItem>
+                    ))}
+                  {!category && (
+                    <MenuItem disabled>Select category</MenuItem>
+                  )}
+                </Select>
+                </>
+              )}
               {errors.ram && <FormHelperText sx={{ color: "red" }}>{errors.ram}</FormHelperText>}
             </FormControl>
 
             <Button
               variant="contained"
               type="submit"
+              disabled={blockActions}
               sx={{ width: "15%", height: "9%", position: "absolute", right: 10, bottom: 10 }}
             >
               {loading ? <CircularProgress sx={{ color: "white" }} /> : "Add good"}
