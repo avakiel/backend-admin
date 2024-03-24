@@ -20,6 +20,7 @@ import { Category, Product } from "@prisma/client";
 import { normalizeField } from "../utils/normalizeField";
 import { getItemId } from "../utils/getItemId";
 import CircularProgress from "@mui/material/CircularProgress";
+import EditIcon from '@mui/icons-material/Edit';
 
 const availableRam = {
   phones: ["2GB", "3GB", "4GB", "8GB", "16GB", "32GB"],
@@ -110,11 +111,13 @@ export interface EditProduct {
 
 interface Props {
   product: EditProduct;
+  openModal: boolean;
+  handleClose: () => void;
 }
 
 type PropsValues = Omit<EditProduct, "id" | "categoryId" | "capacity" | "ram" | 'itemId'>;
 
-const FormProduct: React.FC<Props> = ({ product }) => {
+const FormProduct: React.FC<Props> = ({ product, openModal, handleClose }) => {
   const existProduct = Object.keys(product).length !== 0;
   const valuesFromProduct = {
     name: product.name,
@@ -139,10 +142,6 @@ const FormProduct: React.FC<Props> = ({ product }) => {
   const categoryID = categories.find((cat) => cat.name === category)?.id;
 
   const [errors, setErrors] = useState(initialErrors);
-
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   useEffect(() => {
     setBlockActions(true);
@@ -294,14 +293,10 @@ const FormProduct: React.FC<Props> = ({ product }) => {
 
   return (
     <div>
-      <IconButton size="large" edge="start" color="inherit" aria-label="menu" onClick={handleOpen}>
-        <AddIcon />
-      </IconButton>
-
-      <Modal open={open} onClose={handleClose}>
+      <Modal open={openModal} onClose={handleClose}>
         <Box sx={style}>
           <Typography sx={{ color: "black" }} id="modal-modal-title" variant="h6" component="h2">
-            {existProduct ? `Edit ${category} product` : "Add new product"}
+            {existProduct ? `Edit product` : "Add new product"}
           </Typography>
 
           <Box

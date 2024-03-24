@@ -6,6 +6,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { Product } from "@prisma/client";
 import FormProduct from "./FormProduct";
 import { formatProduct } from "../utils/formatProduct";
+import EditIcon from '@mui/icons-material/Edit';
 
 interface Props {
   products: Product[];
@@ -13,7 +14,14 @@ interface Props {
 }
 
 const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
-  console.log(products);
+  const [openModal, setOpenModal] = React.useState(false);
+  const [editingProduct, setEditingProduct] = React.useState({} as Product);
+
+  const handleOpen = (product: Product) => {
+    setOpenModal(true)
+    setEditingProduct(product);
+  };
+  const handleClose = () => setOpenModal(false);
 
   const [page, setPage] = useState(0);
   
@@ -48,7 +56,9 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
                   </IconButton>
                 </TableCell>
                 <TableCell>
-                  <FormProduct product={formatProduct(product)} />
+                  <IconButton size="large" edge="start" color="inherit" aria-label="menu" onClick={() => handleOpen(product)}>
+                    <EditIcon />
+                  </IconButton>
                 </TableCell>
                 <TableCell>{product.id}</TableCell>
                 <TableCell>{product.name}</TableCell>
@@ -63,6 +73,7 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
             ))}
           </TableBody>
         </Table>
+        {openModal && <FormProduct product={formatProduct(editingProduct)} openModal={openModal} handleClose={handleClose} /> }
         <TablePagination
         rowsPerPage={15}
         component="div"
