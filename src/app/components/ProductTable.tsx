@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import {
+  Box,
   Table,
   TableBody,
   TableCell,
@@ -164,91 +165,94 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct, updateProduct
   // SORT ORDER
 
   return (
-    <TableContainer
-      component={Paper}
-      // sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}
-    >
-      <Table sx={{ minWidth: 650, backgroundColor: colors.whiteBackground, padding: 2 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            {sortFields.map((field) => (
-              <TableCell align="center" key={field} sx={{ borderColor: colors.border }}>
-                <div onClick={() => handleSortField(field)} style={{ cursor: "pointer" }}>
-                  {field !== "Delete" && field !== "Edit" && field}{" "}
-                  {field !== "Delete" && field !== "Edit" && (
-                    <span className="icon">
-                      <i className={sortIconClass(field)} />
-                    </span>
-                  )}
-                </div>
-              </TableCell>
-            ))}
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {renderProduct
-            .map((product) => (
-              <TableRow key={product.id} onDoubleClick={() => handleOpen(product)}>
-                <TableCell align="center" width={"5%"} sx={{ borderColor: colors.border }}>
-                  <IconButton aria-label="delete" size="large" onClick={() => deleteProduct(product.id)}>
-                    <DeleteIcon fontSize="inherit" />
-                  </IconButton>
+    <Box sx={{ display: "flex", flexDirection: "column", justifyContent: 'space-between', width: '100%' }}>
+      <TableContainer
+        component={Paper}
+        // sx={{ minHeight: '' }}
+      >
+        <Table sx={{ minWidth: 650, backgroundColor: colors.whiteBackground, padding: 2 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              {sortFields.map((field) => (
+                <TableCell align="center" key={field} sx={{ borderColor: colors.border }}>
+                  <div onClick={() => handleSortField(field)} style={{ cursor: "pointer" }}>
+                    {field !== "Delete" && field !== "Edit" && field}{" "}
+                    {field !== "Delete" && field !== "Edit" && (
+                      <span className="icon">
+                        <i className={sortIconClass(field)} />
+                      </span>
+                    )}
+                  </div>
                 </TableCell>
-                <TableCell align="center" sx={{ borderColor: colors.border }}>
-                  <IconButton size="large" color="inherit" aria-label="menu" onClick={() => handleOpen(product)}>
-                    <EditIcon />
-                  </IconButton>
-                </TableCell>
-                <TableCell align="center" width={"5%"} sx={{ borderColor: colors.border }}>
-                  {product.id}
-                </TableCell>
-                <TableCell align="center" width={"15%"} sx={{ borderColor: colors.border }}>
-                  {product.name}
-                </TableCell>
-                <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
-                  {product.capacity}
-                </TableCell>
-                <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
-                  {product.fullPrice}
-                </TableCell>
-                <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
-                  {product.price}
-                </TableCell>
-                <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
-                  {product.color}
-                </TableCell>
-                <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
-                  {product.screen}
-                </TableCell>
-                <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
-                  {product.ram}
-                </TableCell>
-                <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
-                  {product.year}
-                </TableCell>
-              </TableRow>
-            ))
-            .slice(page * 15, page * 15 + 15)}
-        </TableBody>
-      </Table>
-      {openModal && (
-        <FormProduct product={formatProduct(editingProduct)} updateProduct={updateProduct} openModal={openModal} handleClose={handleClose} handleAlert={handleAlert} />
-      )}
+              ))}
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {renderProduct
+              .map((product) => (
+                <TableRow key={product.id} onDoubleClick={() => handleOpen(product)}>
+                  <TableCell align="center" width={"5%"} sx={{ borderColor: colors.border }}>
+                    <IconButton aria-label="delete" size="large" onClick={() => deleteProduct(product.id)}>
+                      <DeleteIcon fontSize="inherit" />
+                    </IconButton>
+                  </TableCell>
+                  <TableCell align="center" sx={{ borderColor: colors.border }}>
+                    <IconButton size="large" color="inherit" aria-label="menu" onClick={() => handleOpen(product)}>
+                      <EditIcon />
+                    </IconButton>
+                  </TableCell>
+                  <TableCell align="center" width={"5%"} sx={{ borderColor: colors.border }}>
+                    {product.id}
+                  </TableCell>
+                  <TableCell align="center" width={"15%"} sx={{ borderColor: colors.border }}>
+                    {product.name}
+                  </TableCell>
+                  <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
+                    {product.capacity}
+                  </TableCell>
+                  <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
+                    {product.fullPrice}
+                  </TableCell>
+                  <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
+                    {product.price}
+                  </TableCell>
+                  <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
+                    {product.color}
+                  </TableCell>
+                  <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
+                    {product.screen}
+                  </TableCell>
+                  <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
+                    {product.ram}
+                  </TableCell>
+                  <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
+                    {product.year}
+                  </TableCell>
+                </TableRow>
+              ))
+              .slice(page * 15, page * 15 + 15)}
+          </TableBody>
+        </Table>
+        {openModal && (
+          <FormProduct product={formatProduct(editingProduct)} updateProduct={updateProduct} openModal={openModal} handleClose={handleClose} handleAlert={handleAlert} />
+        )}
+      </TableContainer>
+
       <TablePagination
-        rowsPerPage={15}
-        component="div"
-        count={products.length}
-        page={page}
-        onPageChange={handleChangePage}
-        labelRowsPerPage=""
-        SelectProps={{
-          native: true,
-          IconComponent: () => null,
-          style: { display: "none" }
-        }}
-        sx={{ backgroundColor: colors.border }}
-      />
-    </TableContainer>
+          rowsPerPage={15}
+          component="div"
+          count={products.length}
+          page={page}
+          onPageChange={handleChangePage}
+          labelRowsPerPage=""
+          SelectProps={{
+            native: true,
+            IconComponent: () => null,
+            style: { display: "none" }
+          }}
+          sx={{ backgroundColor: colors.border }}
+        />
+    </Box>
   );
 };
 
