@@ -84,7 +84,7 @@ const Main: React.FC = () => {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, display: "flex", width: "100%", backgroundColor: colors.border, height: "90vh" }}>
+    <Box sx={{ flexGrow: 1, display: "flex", width: "100%", backgroundColor: colors.border, minHeight: "100vh" }}>
       <Tabs
         orientation="vertical"
         variant="scrollable"
