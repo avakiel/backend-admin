@@ -3,7 +3,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-const requiredFields = ['id', 'category', 'phoneId', 'itemId', 'name', 'fullPrice', 'price', 'screen', 'capacity', 'color', 'ram', 'year', 'image'];
+const requiredFields = ['itemId', 'name', 'fullPrice', 'price', 'screen', 'capacity', 'color', 'ram', 'year', 'image'];
 
 interface Params { params: { productId: string } };
 

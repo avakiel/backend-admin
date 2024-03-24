@@ -7,7 +7,13 @@ const requiredFields = ['itemId', 'name', 'fullPrice', 'price', 'screen', 'capac
 
 export async function GET() {
   try {
-    const products = await prisma.product.findMany()
+    const products = await prisma.product.findMany(
+      {
+        orderBy: {
+          id: 'asc',
+        },
+      }
+    )
     return NextResponse.json(products)
   } catch (error) {
     return new NextResponse('Internal error', { status: 500 })

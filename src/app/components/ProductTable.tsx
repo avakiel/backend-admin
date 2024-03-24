@@ -15,7 +15,9 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import '@fortawesome/fontawesome-free/css/all.css';
 import { Product } from "@prisma/client";
-import axios from "axios";
+import FormProduct from "./FormProduct";
+import { formatProduct } from "../utils/formatProduct";
+import EditIcon from '@mui/icons-material/Edit';
 import classNames from "classnames";
 
 interface Props {
@@ -25,6 +27,7 @@ interface Props {
 
 const sortFields = [
   "Delete",
+  "Edit",
   "ID",
   "Name",
   "Capacity",
@@ -48,6 +51,15 @@ enum SortOrder {
 }
 
 const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
+  const [openModal, setOpenModal] = React.useState(false);
+  const [editingProduct, setEditingProduct] = React.useState({} as Product);
+
+  const handleOpen = (product: Product) => {
+    setOpenModal(true)
+    setEditingProduct(product);
+  };
+  const handleClose = () => setOpenModal(false);
+
   const [page, setPage] = useState(0);
   const [sortParams, setSortOrder] = useState<SortOrderState>({
     field: "ID",
@@ -151,26 +163,16 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
   // SORT ORDER
 
   return (
-    <TableContainer component={Paper} style={{ width: "100%" }}>
+    <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650, backgroundColor: "gray", padding: 2 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            {/* <TableCell padding="checkbox">
-              <Checkbox
-                color="primary"
-                indeterminate={numSelected > 0 && numSelected < rowCount}
-                checked={rowCount > 0 && numSelected === rowCount}
-                inputProps={{
-                  'aria-label': 'select all desserts',
-                }}
-            />
-          </TableCell> */}
             {sortFields.map((field) => (
               <TableCell align="center" key={field}>
                 <div>
-                  {field}
+                  {(field !== "Delete" && field !== "Edit") && field}
                   {" "}
-                  {field !== "Delete" && (
+                  {(field !== "Delete" && field !== "Edit") && (
                     <span className="icon" onClick={() => handleSortField(field)}>
                       <i className={sortIconClass(field)} style={{cursor: "pointer"}} />
                     </span>
@@ -188,6 +190,11 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
                   <DeleteIcon fontSize="inherit" />
                 </IconButton>
               </TableCell>
+              <TableCell>
+                <IconButton size="large" edge="start" color="inherit" aria-label="menu" onClick={() => handleOpen(product)}>
+                  <EditIcon />
+                </IconButton>
+              </TableCell>
               <TableCell align="center" width={'10%'}>{product.id}</TableCell>
               <TableCell align="center" width={'15%'}>{product.name}</TableCell>
               <TableCell align="center" width={'10%'}>{product.capacity}</TableCell>
@@ -201,6 +208,7 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
           )).slice(page * 15, page * 15 + 15)}
         </TableBody>
       </Table>
+      {openModal && <FormProduct product={formatProduct(editingProduct)} openModal={openModal} handleClose={handleClose} /> }
       <TablePagination
         rowsPerPage={15}
         component="div"

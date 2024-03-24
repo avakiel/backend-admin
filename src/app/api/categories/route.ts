@@ -5,7 +5,13 @@ const prisma = new PrismaClient();
 
 export async function GET() {
     try {
-        const categories = await prisma.category.findMany()
+        const categories = await prisma.category.findMany(
+          {
+            orderBy: {
+              id: 'asc',
+            },
+          }
+        )
         return NextResponse.json(categories)
     } catch (error) {
         return new NextResponse('Internal error', { status: 500 })
