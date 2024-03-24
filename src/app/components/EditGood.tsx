@@ -103,20 +103,20 @@ const EditGood: React.FC<Props> = ({ product, onSave }) => {
             </FormControl>
 
             <FormControl fullWidth sx={{ mb: 4 }}>
-              <InputLabel htmlFor="priceRegular">Price Regular</InputLabel>
+              <InputLabel htmlFor="fullPrice">Price Regular</InputLabel>
               <Input
-                id="priceRegular"
-                name="priceRegular"
+                id="fullPrice"
+                name="fullPrice"
                 value={editedProduct.fullPrice}
                 onChange={handleInputChange}
               />
             </FormControl>
 
             <FormControl fullWidth sx={{ mb: 4 }}>
-              <InputLabel htmlFor="priceDiscount">Price with Discount</InputLabel>
+              <InputLabel htmlFor="price">Price with Discount</InputLabel>
               <Input
-                id="priceDiscount"
-                name="priceDiscount"
+                id="price"
+                name="price"
                 value={editedProduct.price}
                 onChange={handleInputChange}
               />
