@@ -15,7 +15,7 @@ const Header: React.FC = () => {
   const handleClose = () => setOpenModal(false);
   const session = useSession();
 
-  console.log(session);
+  // console.log(session);
 
   return (
     <Box sx={{ flexGrow: 1 }}>

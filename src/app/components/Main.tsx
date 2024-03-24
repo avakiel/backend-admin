@@ -10,7 +10,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 const Main: React.FC = () => {
   const [currentCategory, setCurrentCategory] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false);
-  
+
   const [value, setValue] = useState<number>(0);
 
   useEffect(() => {
