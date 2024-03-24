@@ -78,19 +78,22 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct, updateProduct
   const handleSortField = (field: string): any => {
     let sortByField = field;
     let ordertoggle = SortOrder.Default;
-    if (sortParams.order === SortOrder.Default) {
+    if (sortParams.order === SortOrder.Default || sortParams.field !== field) {
       ordertoggle = SortOrder.Descending;
     } else if (sortParams.order === SortOrder.Descending && sortParams.field === sortByField) {
-      ordertoggle = SortOrder.Ascending;
-    } else if (sortParams.field === "" || SortOrder.Ascending === sortParams.order) {
-      ordertoggle = SortOrder.Default;
-      sortByField = "ID";
+      ordertoggle = SortOrder.Ascending
+    } else if (sortParams.field === field && sortParams.order === SortOrder.Ascending) {
+      ordertoggle = SortOrder.Default
+      sortByField = 'ID'
+    } else if (sortParams.field !== field) {
+      ordertoggle = SortOrder.Descending
     }
     setSortOrder({
       field: sortByField,
       order: ordertoggle
     });
   };
+
 
   const sortIconClass = (sortBy: string) => {
     return classNames("fas", {
