@@ -94,8 +94,6 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct, updateProduct
     });
   };
 
-  console.log(sortParams.field)
-  console.log(sortParams.order)
 
   const sortIconClass = (sortBy: string) => {
     return classNames("fas", {
