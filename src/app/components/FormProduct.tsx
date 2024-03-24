@@ -94,7 +94,9 @@ interface AvailableFields {
 }
 
 export interface EditProduct {
+  id: string;
   name: string;
+  itemId: string;
   priceRegular: string;
   priceWithDiscount: string;
   color: string;
@@ -110,7 +112,7 @@ interface Props {
   product: EditProduct;
 }
 
-type PropsValues = Omit<EditProduct, "categoryId" | "capacity" | "ram">;
+type PropsValues = Omit<EditProduct, "id" | "categoryId" | "capacity" | "ram" | 'itemId'>;
 
 const FormProduct: React.FC<Props> = ({ product }) => {
   const existProduct = Object.keys(product).length !== 0;
@@ -223,32 +225,61 @@ const FormProduct: React.FC<Props> = ({ product }) => {
     setLoading(true);
 
     if (validateForm()) {
-      const newProduct = {
-        itemId: getItemId(values.name),
-        name: values.name,
-        fullPrice: +values.priceRegular,
-        price: +values.priceWithDiscount,
-        screen: values.screen,
-        capacity,
-        color: values.color,
-        ram,
-        year: +values.year,
-        image: values.image,
-        categoryId: categoryID as number
-      };
+      if (!existProduct) {
+        const newProduct = {
+          itemId: getItemId(values.name),
+          name: values.name,
+          fullPrice: +values.priceRegular,
+          price: +values.priceWithDiscount,
+          screen: values.screen,
+          capacity,
+          color: values.color,
+          ram,
+          year: +values.year,
+          image: values.image,
+          categoryId: categoryID as number
+        };
+  
+        axios
+          .post("/api/products", newProduct)
+          .then(() => {
+            handleClose();
+            resetForm();
+          })
+          .catch((error) => {
+            throw new Error();
+          })
+          .finally(() => {
+            setLoading(false);
+          });
+      } else {
+        const productToUpdate = {
+          name: values.name,
+          itemId: product.itemId,
+          fullPrice: +values.priceRegular,
+          price: +values.priceWithDiscount,
+          screen: values.screen,
+          capacity,
+          color: values.color,
+          ram,
+          year: +values.year,
+          image: values.image,
+          categoryId: categoryID as number
+        };
 
-      axios
-        .post("/api/products", newProduct)
-        .then(() => {
-          handleClose();
-          resetForm();
-        })
-        .catch((error) => {
-          throw new Error();
-        })
-        .finally(() => {
-          setLoading(false);
-        });
+        axios
+          .patch(`/api/products/${product.id}`, productToUpdate)
+          .then(() => {
+            handleClose();
+            resetForm();
+          })
+          .catch((error) => {
+            throw new Error();
+          })
+          .finally(() => {
+            setLoading(false);
+          });
+      }
     } else {
       setLoading(false);
     }
@@ -331,40 +362,38 @@ const FormProduct: React.FC<Props> = ({ product }) => {
             <FormControl sx={{ width: "100%" }} variant="standard" required>
               {category && (
                 <>
-                <InputLabel id="capacity">Capacity</InputLabel>
-                <Select
-                  name="capacity"
-                  labelId="capacity"
-                  id="capacity"
-                  value={capacity}
-                  label="capacity"
-                  onChange={(event) => {
-                    const { name, value } = event.target;
-                    setCapacity(value);
+                  <InputLabel id="capacity">Capacity</InputLabel>
+                  <Select
+                    name="capacity"
+                    labelId="capacity"
+                    id="capacity"
+                    value={capacity}
+                    label="capacity"
+                    onChange={(event) => {
+                      const { name, value } = event.target;
+                      setCapacity(value);
 
-                    if (!value) {
-                      setErrors({
-                        ...errors,
-                        [name]: "This field is required"
-                      });
-                    } else {
-                      setErrors({
-                        ...errors,
-                        [name]: ""
-                      });
-                    }
-                  }}
-                >
-                  {category && 
-                    availableCapacity[category as keyof AvailableFields].map((cap) => (
-                      <MenuItem key={cap} value={cap}>
-                        {cap}
-                      </MenuItem>
-                    ))}
-                  {!category && (
-                    <MenuItem disabled>Select category</MenuItem>
-                  )}
-                </Select>
+                      if (!value) {
+                        setErrors({
+                          ...errors,
+                          [name]: "This field is required"
+                        });
+                      } else {
+                        setErrors({
+                          ...errors,
+                          [name]: ""
+                        });
+                      }
+                    }}
+                  >
+                    {category &&
+                      availableCapacity[category as keyof AvailableFields].map((cap) => (
+                        <MenuItem key={cap} value={cap}>
+                          {cap}
+                        </MenuItem>
+                      ))}
+                    {!category && <MenuItem disabled>Select category</MenuItem>}
+                  </Select>
                 </>
               )}
               {errors.capacity && <FormHelperText sx={{ color: "red" }}>{errors.capacity}</FormHelperText>}
@@ -372,40 +401,38 @@ const FormProduct: React.FC<Props> = ({ product }) => {
             <FormControl sx={{ width: "100%" }} variant="standard" required>
               {category && (
                 <>
-                <InputLabel id="ram">RAM</InputLabel>
-                <Select
-                  name="ram"
-                  labelId="ram"
-                  id="ram"
-                  value={ram}
-                  label="ram"
-                  onChange={(event) => {
-                    const { name, value } = event.target;
-                    setRam(value);
+                  <InputLabel id="ram">RAM</InputLabel>
+                  <Select
+                    name="ram"
+                    labelId="ram"
+                    id="ram"
+                    value={ram}
+                    label="ram"
+                    onChange={(event) => {
+                      const { name, value } = event.target;
+                      setRam(value);
 
-                    if (!value) {
-                      setErrors({
-                        ...errors,
-                        [name]: "This field is required"
-                      });
-                    } else {
-                      setErrors({
-                        ...errors,
-                        [name]: ""
-                      });
-                    }
-                  }}
-                >
-                  {category &&
-                    availableRam[category as keyof AvailableFields].map((cap) => (
-                      <MenuItem key={cap} value={cap}>
-                        {cap}
-                      </MenuItem>
-                    ))}
-                  {!category && (
-                    <MenuItem disabled>Select category</MenuItem>
-                  )}
-                </Select>
+                      if (!value) {
+                        setErrors({
+                          ...errors,
+                          [name]: "This field is required"
+                        });
+                      } else {
+                        setErrors({
+                          ...errors,
+                          [name]: ""
+                        });
+                      }
+                    }}
+                  >
+                    {category &&
+                      availableRam[category as keyof AvailableFields].map((cap) => (
+                        <MenuItem key={cap} value={cap}>
+                          {cap}
+                        </MenuItem>
+                      ))}
+                    {!category && <MenuItem disabled>Select category</MenuItem>}
+                  </Select>
                 </>
               )}
               {errors.ram && <FormHelperText sx={{ color: "red" }}>{errors.ram}</FormHelperText>}
@@ -417,7 +444,7 @@ const FormProduct: React.FC<Props> = ({ product }) => {
               disabled={blockActions}
               sx={{ width: "15%", height: "9%", position: "absolute", right: 10, bottom: 10 }}
             >
-              {loading ? <CircularProgress sx={{ color: "white" }} /> : "Add good"}
+              {loading ? <CircularProgress sx={{ color: "white" }} /> : existProduct ? "Update" : "Create"}
             </Button>
           </Box>
         </Box>

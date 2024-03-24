@@ -13,6 +13,8 @@ interface Props {
 }
 
 const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
+  console.log(products);
+
   const [page, setPage] = useState(0);
   
   const handleChangePage = (event: unknown, newPage: number) => {
