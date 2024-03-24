@@ -13,16 +13,17 @@ import {
   TablePagination
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import '@fortawesome/fontawesome-free/css/all.css';
+import "@fortawesome/fontawesome-free/css/all.css";
 import { Product } from "@prisma/client";
 import FormProduct from "./FormProduct";
 import { formatProduct } from "../utils/formatProduct";
-import EditIcon from '@mui/icons-material/Edit';
+import EditIcon from "@mui/icons-material/Edit";
 import classNames from "classnames";
+import { colors } from "../color-palette/colors";
 
 interface Props {
   products: Product[];
-  deleteProduct: (id: number) => void
+  deleteProduct: (id: number) => void;
 }
 
 const sortFields = [
@@ -55,7 +56,7 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
   const [editingProduct, setEditingProduct] = React.useState({} as Product);
 
   const handleOpen = (product: Product) => {
-    setOpenModal(true)
+    setOpenModal(true);
     setEditingProduct(product);
   };
   const handleClose = () => setOpenModal(false);
@@ -78,27 +79,25 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
       ordertoggle = SortOrder.Descending;
     } else if (sortParams.order === SortOrder.Descending && sortParams.field === sortByField) {
       ordertoggle = SortOrder.Ascending;
-    } else if (sortParams.field === '' || SortOrder.Ascending === sortParams.order){
+    } else if (sortParams.field === "" || SortOrder.Ascending === sortParams.order) {
       ordertoggle = SortOrder.Default;
-      sortByField = 'ID'
+      sortByField = "ID";
     }
     setSortOrder({
       field: sortByField,
-      order: ordertoggle,
+      order: ordertoggle
     });
-    
   };
-  
+
   const sortIconClass = (sortBy: string) => {
-    return classNames('fas', {
-      'fa-sort': sortParams.field !== sortBy || sortParams.order === SortOrder.Default,
-      'fa-sort-down': sortParams.field === sortBy && sortParams.order === SortOrder.Descending,
-      'fa-sort-up': sortParams.field === sortBy && sortParams.order === SortOrder.Ascending,
+    return classNames("fas", {
+      "fa-sort": sortParams.field !== sortBy || sortParams.order === SortOrder.Default,
+      "fa-sort-down": sortParams.field === sortBy && sortParams.order === SortOrder.Descending,
+      "fa-sort-up": sortParams.field === sortBy && sortParams.order === SortOrder.Ascending
     });
   };
 
   const preparedProducts = (sort: SortOrderState, products: Product[]) => {
-
     function cleanData(value: string): number {
       switch (sort.field) {
         case "Capacity":
@@ -159,22 +158,24 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
     return products;
   };
 
-  const renderProduct = preparedProducts(sortParams, products)
+  const renderProduct = preparedProducts(sortParams, products);
   // SORT ORDER
 
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650, backgroundColor: "gray", padding: 2 }} aria-label="simple table">
+    <TableContainer
+      component={Paper}
+      // sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}
+    >
+      <Table sx={{ minWidth: 650, backgroundColor: colors.whiteBackground, padding: 2 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             {sortFields.map((field) => (
-              <TableCell align="center" key={field}>
-                <div>
-                  {(field !== "Delete" && field !== "Edit") && field}
-                  {" "}
-                  {(field !== "Delete" && field !== "Edit") && (
-                    <span className="icon" onClick={() => handleSortField(field)}>
-                      <i className={sortIconClass(field)} style={{cursor: "pointer"}} />
+              <TableCell align="center" key={field} sx={{ borderColor: colors.border }}>
+                <div onClick={() => handleSortField(field)} style={{ cursor: "pointer" }}>
+                  {field !== "Delete" && field !== "Edit" && field}{" "}
+                  {field !== "Delete" && field !== "Edit" && (
+                    <span className="icon">
+                      <i className={sortIconClass(field)} />
                     </span>
                   )}
                 </div>
@@ -183,32 +184,54 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {(renderProduct).map((product) => (
-            <TableRow key={product.id}>
-              <TableCell align="center" width={'5%'}>
-                <IconButton aria-label="delete" size="large" onClick={() => deleteProduct(product.id)}>
-                  <DeleteIcon fontSize="inherit" />
-                </IconButton>
-              </TableCell>
-              <TableCell>
-                <IconButton size="large" edge="start" color="inherit" aria-label="menu" onClick={() => handleOpen(product)}>
-                  <EditIcon />
-                </IconButton>
-              </TableCell>
-              <TableCell align="center" width={'10%'}>{product.id}</TableCell>
-              <TableCell align="center" width={'15%'}>{product.name}</TableCell>
-              <TableCell align="center" width={'10%'}>{product.capacity}</TableCell>
-              <TableCell align="center" width={'10%'}>{product.fullPrice}</TableCell>
-              <TableCell align="center" width={'10%'}>{product.price}</TableCell>
-              <TableCell align="center" width={'10%'}>{product.color}</TableCell>
-              <TableCell align="center" width={'10%'}>{product.screen}</TableCell>
-              <TableCell align="center" width={'10%'}>{product.ram}</TableCell>
-              <TableCell align="center" width={'10%'}>{product.year}</TableCell>
-            </TableRow>
-          )).slice(page * 15, page * 15 + 15)}
+          {renderProduct
+            .map((product) => (
+              <TableRow key={product.id} onDoubleClick={() => handleOpen(product)}>
+                <TableCell align="center" width={"5%"} sx={{ borderColor: colors.border }}>
+                  <IconButton aria-label="delete" size="large" onClick={() => deleteProduct(product.id)}>
+                    <DeleteIcon fontSize="inherit" />
+                  </IconButton>
+                </TableCell>
+                <TableCell align="center" sx={{ borderColor: colors.border }}>
+                  <IconButton size="large" color="inherit" aria-label="menu" onClick={() => handleOpen(product)}>
+                    <EditIcon />
+                  </IconButton>
+                </TableCell>
+                <TableCell align="center" width={"5%"} sx={{ borderColor: colors.border }}>
+                  {product.id}
+                </TableCell>
+                <TableCell align="center" width={"15%"} sx={{ borderColor: colors.border }}>
+                  {product.name}
+                </TableCell>
+                <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
+                  {product.capacity}
+                </TableCell>
+                <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
+                  {product.fullPrice}
+                </TableCell>
+                <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
+                  {product.price}
+                </TableCell>
+                <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
+                  {product.color}
+                </TableCell>
+                <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
+                  {product.screen}
+                </TableCell>
+                <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
+                  {product.ram}
+                </TableCell>
+                <TableCell align="center" width={"10%"} sx={{ borderColor: colors.border }}>
+                  {product.year}
+                </TableCell>
+              </TableRow>
+            ))
+            .slice(page * 15, page * 15 + 15)}
         </TableBody>
       </Table>
-      {openModal && <FormProduct product={formatProduct(editingProduct)} openModal={openModal} handleClose={handleClose} /> }
+      {openModal && (
+        <FormProduct product={formatProduct(editingProduct)} openModal={openModal} handleClose={handleClose} />
+      )}
       <TablePagination
         rowsPerPage={15}
         component="div"
@@ -221,7 +244,7 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
           IconComponent: () => null,
           style: { display: "none" }
         }}
-        sx={{ backgroundColor: "gray" }}
+        sx={{ backgroundColor: colors.border }}
       />
     </TableContainer>
   );

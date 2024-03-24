@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
   Box,
   Typography,
   Modal,
-  IconButton,
   Button,
   FormControl,
   FormHelperText,
@@ -15,12 +14,11 @@ import {
   Select,
   MenuItem
 } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
-import { Category, Product } from "@prisma/client";
+import { Category } from "@prisma/client";
 import { normalizeField } from "../utils/normalizeField";
 import { getItemId } from "../utils/getItemId";
 import CircularProgress from "@mui/material/CircularProgress";
-import EditIcon from '@mui/icons-material/Edit';
+import { colors } from "../color-palette/colors";
 
 const availableRam = {
   phones: ["2GB", "3GB", "4GB", "8GB", "16GB", "32GB"],
@@ -285,9 +283,11 @@ const FormProduct: React.FC<Props> = ({ product, openModal, handleClose }) => {
   };
 
   const resetForm = () => {
+    if(!existProduct) {
+      setCategory("");
+    }
     setValues(initialValues);
     setCapacity("");
-    setCategory("");
     setRam("");
   };
 
@@ -295,7 +295,7 @@ const FormProduct: React.FC<Props> = ({ product, openModal, handleClose }) => {
     <div>
       <Modal open={openModal} onClose={handleClose}>
         <Box sx={style}>
-          <Typography sx={{ color: "black" }} id="modal-modal-title" variant="h6" component="h2">
+          <Typography sx={{ color: colors.textBlack }} id="modal-modal-title" variant="h6" component="h2">
             {existProduct ? `Edit product` : "Add new product"}
           </Typography>
 
@@ -341,7 +341,7 @@ const FormProduct: React.FC<Props> = ({ product, openModal, handleClose }) => {
                   </MenuItem>
                 ))}
               </Select>
-              {errors.category && <FormHelperText sx={{ color: "red" }}>{errors.category}</FormHelperText>}
+              {errors.category && <FormHelperText sx={{ color: colors.error }}>{errors.category}</FormHelperText>}
             </FormControl>
             {Object.keys(values).map((key) => (
               <FormControl variant="standard" key={key} required>
@@ -349,7 +349,7 @@ const FormProduct: React.FC<Props> = ({ product, openModal, handleClose }) => {
                 <Input id={key} name={key} value={values[key as keyof Values]} onChange={handleChange} />
 
                 {errors[key as keyof Values] && (
-                  <FormHelperText sx={{ color: "red" }}>{errors[key as keyof Errors]}</FormHelperText>
+                  <FormHelperText sx={{ color: colors.error }}>{errors[key as keyof Errors]}</FormHelperText>
                 )}
               </FormControl>
             ))}
@@ -391,7 +391,7 @@ const FormProduct: React.FC<Props> = ({ product, openModal, handleClose }) => {
                   </Select>
                 </>
               )}
-              {errors.capacity && <FormHelperText sx={{ color: "red" }}>{errors.capacity}</FormHelperText>}
+              {errors.capacity && <FormHelperText sx={{ color: colors.error }}>{errors.capacity}</FormHelperText>}
             </FormControl>
             <FormControl sx={{ width: "100%" }} variant="standard" required>
               {category && (
@@ -430,16 +430,24 @@ const FormProduct: React.FC<Props> = ({ product, openModal, handleClose }) => {
                   </Select>
                 </>
               )}
-              {errors.ram && <FormHelperText sx={{ color: "red" }}>{errors.ram}</FormHelperText>}
+              {errors.ram && <FormHelperText sx={{ color: colors.error }}>{errors.ram}</FormHelperText>}
             </FormControl>
 
             <Button
               variant="contained"
-              type="submit"
-              disabled={blockActions}
-              sx={{ width: "15%", height: "9%", position: "absolute", right: 10, bottom: 10 }}
+              disabled={loading || blockActions}
+              onClick={() => resetForm()}
+              sx={{ width: "15%", backgroundColor: colors.wrong,  height: "9%", position: "absolute", right: 150, bottom: 10 }}
             >
-              {loading ? <CircularProgress sx={{ color: "white" }} /> : existProduct ? "Update" : "Create"}
+              Reset
+            </Button>
+            <Button
+              variant="contained"
+              type="submit"
+              disabled={loading || blockActions}
+              sx={{ width: "15%", backgroundColor: colors.success,  height: "9%", position: "absolute", right: 10, bottom: 10 }}
+            >
+              {loading ? <CircularProgress sx={{ color: colors.loader }} /> : existProduct ? "Update" : "Create"}
             </Button>
           </Box>
         </Box>
