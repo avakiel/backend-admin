@@ -26,7 +26,7 @@ interface Props {
   products: Product[];
   deleteProduct: (id: number) => void;
   handleAlert: () => void;
-  updateProduct: (id: string, productToUpdate: any, handleClose: any, resetForm: any, setLoading: any) => void
+  updateProduct: (id: string, productToUpdate: any, handleClose: any, resetForm: any, setLoading: any) => void;
 }
 
 const sortFields = [
@@ -165,7 +165,7 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct, updateProduct
   // SORT ORDER
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", justifyContent: 'space-between', width: '100%' }}>
+    <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between", width: "100%" }}>
       <TableContainer
         component={Paper}
         // sx={{ minHeight: '' }}
@@ -234,24 +234,30 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct, updateProduct
           </TableBody>
         </Table>
         {openModal && (
-          <FormProduct product={formatProduct(editingProduct)} updateProduct={updateProduct} openModal={openModal} handleClose={handleClose} handleAlert={handleAlert} />
+          <FormProduct
+            product={formatProduct(editingProduct)}
+            updateProduct={updateProduct}
+            openModal={openModal}
+            handleClose={handleClose}
+            handleAlert={handleAlert}
+          />
         )}
       </TableContainer>
 
       <TablePagination
-          rowsPerPage={15}
-          component="div"
-          count={products.length}
-          page={page}
-          onPageChange={handleChangePage}
-          labelRowsPerPage=""
-          SelectProps={{
-            native: true,
-            IconComponent: () => null,
-            style: { display: "none" }
-          }}
-          sx={{ backgroundColor: colors.border }}
-        />
+        rowsPerPage={15}
+        component="div"
+        count={products.length}
+        page={page}
+        onPageChange={handleChangePage}
+        labelRowsPerPage=""
+        SelectProps={{
+          native: true,
+          IconComponent: () => null,
+          style: { display: "none" }
+        }}
+        sx={{ backgroundColor: colors.pagination }}
+      />
     </Box>
   );
 };
