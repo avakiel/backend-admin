@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import {
   Box,
@@ -16,7 +16,7 @@ import {
   MenuItem
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import { Category } from "@prisma/client";
+import { Category, Product } from "@prisma/client";
 import { normalizeField } from "../utils/normalizeField";
 import { getItemId } from "../utils/getItemId";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -50,7 +50,7 @@ const initialValues: Values = {
   screen: "",
   year: "",
   image: ""
-}
+};
 const initialErrors = {
   name: "",
   priceRegular: "",
@@ -62,7 +62,7 @@ const initialErrors = {
   capacity: "",
   ram: "",
   category: ""
-}
+};
 
 interface Values {
   name: string;
@@ -93,14 +93,67 @@ interface AvailableFields {
   tablets: string[];
 }
 
-export default function AddGood() {
-  const [values, setValues] = useState(initialValues);
-  const [capacity, setCapacity] = useState("");
-  const [ram, setRam] = useState("");
+export interface EditProduct {
+  name: string;
+  priceRegular: string;
+  priceWithDiscount: string;
+  color: string;
+  screen: string;
+  year: string;
+  image: string;
+  categoryId: string;
+  capacity: string;
+  ram: string;
+}
+
+interface Props {
+  product: EditProduct;
+}
+
+type PropsValues = Omit<EditProduct, "categoryId" | "capacity" | "ram">;
+
+const FormProduct: React.FC<Props> = ({ product }) => {
+  const existProduct = Object.keys(product).length !== 0;
+  const valuesFromProduct = {
+    name: product.name,
+    priceRegular: product.priceRegular,
+    priceWithDiscount: product.priceWithDiscount,
+    color: product.color,
+    screen: product.screen,
+    year: product.year,
+    image: product.image
+  };
+
+  const [values, setValues] = useState<PropsValues>(existProduct ? valuesFromProduct : initialValues);
+  const [capacity, setCapacity] = useState(existProduct ? product.capacity : "");
+  const [ram, setRam] = useState(existProduct ? product.ram : "");
+
+  console.log(capacity, ram)
   const [loading, setLoading] = useState(false);
 
   const [categories, setCategories] = useState<Category[]>([]);
-  const [category, setCategory] = useState("");
+
+  let categoryEditingProduct = useMemo(() => {
+    let result = {
+      id: 0,
+      name: ""
+    };
+  
+    if (existProduct) {
+      const foundCategory = categories.find((category) => category.id === +product.categoryId);
+      if (foundCategory) {
+        result = {
+          id: foundCategory.id,
+          name: foundCategory.name
+        };
+      }
+    }
+  
+    return result;
+  }, []);
+  
+  const [category, setCategory] = useState(categoryEditingProduct.name ? categoryEditingProduct.name : "");
+  console.log(category)
   const categoryID = categories.find((cat) => cat.name === category)?.id;
 
   const [errors, setErrors] = useState(initialErrors);
@@ -117,7 +170,7 @@ export default function AddGood() {
         throw Error();
       });
   }, []);
-  
+
   const handleChange = (event: any) => {
     const { name, value } = event.target;
     setValues({
@@ -127,12 +180,12 @@ export default function AddGood() {
     if (!value) {
       setErrors({
         ...errors,
-        [name]: 'This field is required'
+        [name]: "This field is required"
       });
     } else {
       setErrors({
         ...errors,
-        [name]: ''
+        [name]: ""
       });
     }
   };
@@ -140,7 +193,7 @@ export default function AddGood() {
   const validateForm = () => {
     const newErrors: Errors = {} as Errors;
     let formIsValid = true;
-    const fieldsToCheck = ['priceRegular', 'priceWithDiscount', 'year'];
+    const fieldsToCheck = ["priceRegular", "priceWithDiscount", "year"];
 
     Object.keys(values).forEach((key) => {
       if (!values[key as keyof Values]) {
@@ -210,9 +263,9 @@ export default function AddGood() {
 
   const resetForm = () => {
     setValues(initialValues);
-    setCapacity('');
-    setCategory('');
-    setRam('');
+    setCapacity("");
+    setCategory("");
+    setRam("");
   };
 
   return (
@@ -224,7 +277,7 @@ export default function AddGood() {
       <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
           <Typography sx={{ color: "black" }} id="modal-modal-title" variant="h6" component="h2">
-            Add new product
+            {categoryEditingProduct ? `Edit ${categoryEditingProduct.name} product` : "Add new product"}
           </Typography>
 
           <Box
@@ -249,7 +302,7 @@ export default function AddGood() {
                   const { name, value } = event.target;
                   setCategory(value);
 
-                  if(!value) {
+                  if (!value) {
                     setErrors({
                       ...errors,
                       [name]: "This field is required"
@@ -275,13 +328,15 @@ export default function AddGood() {
                 <InputLabel htmlFor={key}>{normalizeField(key)}</InputLabel>
                 <Input id={key} name={key} value={values[key as keyof Values]} onChange={handleChange} />
 
-                {errors[key as keyof Values] && <FormHelperText sx={{ color: "red" }}>{errors[key as keyof Errors]}</FormHelperText>}
+                {errors[key as keyof Values] && (
+                  <FormHelperText sx={{ color: "red" }}>{errors[key as keyof Errors]}</FormHelperText>
+                )}
               </FormControl>
             ))}
 
             <FormControl sx={{ width: "100%" }} variant="standard" required>
               <InputLabel id="capacity">Capacity</InputLabel>
-              <Select
+              {/* <Select
                 name="capacity"
                 labelId="capacity"
                 id="capacity"
@@ -291,7 +346,7 @@ export default function AddGood() {
                   const { name, value } = event.target;
                   setCapacity(value);
 
-                  if(!value) {
+                  if (!value) {
                     setErrors({
                       ...errors,
                       [name]: "This field is required"
@@ -304,18 +359,19 @@ export default function AddGood() {
                   }
                 }}
               >
-                {category && availableCapacity[category as keyof AvailableFields].map((cap) => (
+                {category &&
+                  availableCapacity[category as keyof AvailableFields].map((cap) => (
                     <MenuItem key={cap} value={cap}>
                       {cap}
                     </MenuItem>
                   ))}
                 {!availableCapacity[category as keyof AvailableFields] && <MenuItem disabled>Select category</MenuItem>}
-              </Select>
+              </Select> */}
               {errors.capacity && <FormHelperText sx={{ color: "red" }}>{errors.capacity}</FormHelperText>}
             </FormControl>
             <FormControl sx={{ width: "100%" }} variant="standard" required>
               <InputLabel id="ram">RAM</InputLabel>
-              <Select
+              {/* <Select
                 name="ram"
                 labelId="ram"
                 id="ram"
@@ -325,7 +381,7 @@ export default function AddGood() {
                   const { name, value } = event.target;
                   setRam(value);
 
-                  if(!value) {
+                  if (!value) {
                     setErrors({
                       ...errors,
                       [name]: "This field is required"
@@ -338,13 +394,14 @@ export default function AddGood() {
                   }
                 }}
               >
-                {category && availableRam[category as keyof AvailableFields].map((cap) => (
+                {category &&
+                  availableRam[category as keyof AvailableFields].map((cap) => (
                     <MenuItem key={cap} value={cap}>
                       {cap}
                     </MenuItem>
                   ))}
                 {!availableCapacity[category as keyof AvailableFields] && <MenuItem disabled>Select category</MenuItem>}
-              </Select>
+              </Select> */}
               {errors.ram && <FormHelperText sx={{ color: "red" }}>{errors.ram}</FormHelperText>}
             </FormControl>
 
@@ -360,4 +417,6 @@ export default function AddGood() {
       </Modal>
     </div>
   );
-}
+};
+
+export default FormProduct;

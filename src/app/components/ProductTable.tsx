@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton, TablePagination } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Product } from "@prisma/client";
-import axios from "axios";
+import FormProduct from "./FormProduct";
+import { formatProduct } from "../utils/formatProduct";
 
 interface Props {
   products: Product[];
@@ -24,6 +25,7 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
           <TableHead>
             <TableRow>
               <TableCell></TableCell>
+              <TableCell></TableCell>
               <TableCell>ID</TableCell>
               <TableCell>Name</TableCell>
               <TableCell>Capacity</TableCell>
@@ -37,12 +39,15 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct }) => {
           </TableHead>
           <TableBody>
             {products.slice(page * 15, page * 15 + 15).map((product) => (
-              <TableRow key={product.id}>
+              <TableRow onDoubleClick={() => {}} key={product.id}>
                 <TableCell>
                   <IconButton aria-label="delete" size="large" onClick={() => deleteProduct(product.id)}>
                     <DeleteIcon fontSize="inherit" />
                   </IconButton>
                 </TableCell>
+                {/* <TableCell>
+                  <FormProduct product={formatProduct(product)} />
+                </TableCell> */}
                 <TableCell>{product.id}</TableCell>
                 <TableCell>{product.name}</TableCell>
                 <TableCell>{product.capacity}</TableCell>
