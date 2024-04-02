@@ -8,8 +8,12 @@ import { signOut, useSession } from "next-auth/react";
 import FormProduct, { EditProduct } from "./FormProduct";
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import { SessionWithUserRole } from "../configs/auth";
 
 const Header: React.FC = () => {
+  const session = useSession() as unknown as SessionWithUserRole;
+  const isNotAdmin = session.data?.user?.role !== "administrator";
+
   const [openModal, setOpenModal] = React.useState(false);
   const [openAlert, setOpenAlert] = React.useState(false);
   const handleOpen = () => {
@@ -25,12 +29,11 @@ const Header: React.FC = () => {
     setOpenAlert(false);
   };
   
-  const session = useSession();
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: "DimGray", borderBottom: "1px solid white" }}>
         <Toolbar>
-          <IconButton size="large" edge="start" color="inherit" aria-label="menu" onClick={handleOpen}>
+          <IconButton disabled={isNotAdmin} size="large" edge="start" color="inherit" aria-label="menu" onClick={handleOpen}>
            <AddIcon />
           </IconButton>
           <FormProduct product={{} as EditProduct} openModal={openModal} handleClose={handleClose} handleAlert={handleAlert}/>

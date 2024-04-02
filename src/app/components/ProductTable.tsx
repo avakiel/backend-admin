@@ -61,8 +61,7 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct, updateProduct
   const [editingProduct, setEditingProduct] = React.useState({} as Product);
 
   const session = useSession() as unknown as SessionWithUserRole;
-  const userRole: string = session.data?.user?.role || "";
-  const isNotAdmin = userRole !== "administrator";
+  const isNotAdmin = session.data?.user?.role !== "administrator";
 
   const handleOpen = (product: Product) => {
     setOpenModal(true);
