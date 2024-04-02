@@ -21,19 +21,19 @@ const users = [
     id: 2,
     email: 'ivan.kulikovsky.9970@gmail.com',
     password: '123',
-    role: 'admin'
+    role: 'super-admin'
   },
   {
     id: 3,
     email: 'aleksandrrezanov17@gmail.com',
     password: '123123123',
-    role: 'admin'
+    role: 'super-admin'
   },
   {
     id: 4,
     email: 'maxplay123890@gmail.com',
     password: '0000',
-    role: 'admin'
+    role: 'super-admin'
   },
 ];
 
