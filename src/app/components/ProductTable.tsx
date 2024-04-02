@@ -21,6 +21,8 @@ import { formatProduct } from "../utils/formatProduct";
 import EditIcon from "@mui/icons-material/Edit";
 import classNames from "classnames";
 import { colors } from "../color-palette/colors";
+import { useSession } from "next-auth/react";
+import { SessionWithUserRole } from "../configs/auth";
 
 interface Props {
   products: Product[];
@@ -58,6 +60,10 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct, updateProduct
   const [openModal, setOpenModal] = React.useState(false);
   const [editingProduct, setEditingProduct] = React.useState({} as Product);
 
+  const session = useSession() as unknown as SessionWithUserRole;
+  const userRole: string = session.data?.user?.role || "";
+  const isNotSuperAdmin = userRole !== "super-admin";
+
   const handleOpen = (product: Product) => {
     setOpenModal(true);
     setEditingProduct(product);
@@ -74,7 +80,15 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct, updateProduct
     setPage(newPage);
   };
 
-  // SORT ORDER
+  const handleDoubleClickOnEdit = (product: Product) => {
+    if (isNotSuperAdmin) {
+      return;
+    }
+  
+    handleOpen(product);
+  };
+
+  // #region SORT ORDER
   const handleSortField = (field: string): any => {
     let sortByField = field;
     let ordertoggle = SortOrder.Default;
@@ -165,13 +179,12 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct, updateProduct
   };
 
   const renderProduct = preparedProducts(sortParams, products);
-  // SORT ORDER
+  // #endregion SORT ORDER
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between", width: "100%" }}>
       <TableContainer
         component={Paper}
-        // sx={{ minHeight: '' }}
       >
         <Table sx={{ minWidth: 650, backgroundColor: colors.whiteBackground, padding: 2 }} aria-label="simple table">
           <TableHead>
@@ -193,14 +206,14 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct, updateProduct
           <TableBody>
             {renderProduct
               .map((product) => (
-                <TableRow key={product.id} onDoubleClick={() => handleOpen(product)}>
+                <TableRow key={product.id} onDoubleClick={() => handleDoubleClickOnEdit(product)}>
                   <TableCell align="center" width={"5%"} sx={{ borderColor: colors.border }}>
-                    <IconButton aria-label="delete" size="large" onClick={() => deleteProduct(product.id)}>
+                    <IconButton disabled={isNotSuperAdmin} aria-label="delete" size="large" onClick={() => deleteProduct(product.id)}>
                       <DeleteIcon fontSize="inherit" />
                     </IconButton>
                   </TableCell>
                   <TableCell align="center" sx={{ borderColor: colors.border }}>
-                    <IconButton size="large" color="inherit" aria-label="menu" onClick={() => handleOpen(product)}>
+                    <IconButton disabled={isNotSuperAdmin} size="large" color="inherit" aria-label="menu" onClick={() => handleOpen(product)}>
                       <EditIcon />
                     </IconButton>
                   </TableCell>
