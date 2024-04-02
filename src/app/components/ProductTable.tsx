@@ -62,7 +62,7 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct, updateProduct
 
   const session = useSession() as unknown as SessionWithUserRole;
   const userRole: string = session.data?.user?.role || "";
-  const isNotSuperAdmin = userRole !== "super-admin";
+  const isNotAdmin = userRole !== "administrator";
 
   const handleOpen = (product: Product) => {
     setOpenModal(true);
@@ -81,7 +81,7 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct, updateProduct
   };
 
   const handleDoubleClickOnEdit = (product: Product) => {
-    if (isNotSuperAdmin) {
+    if (isNotAdmin) {
       return;
     }
   
@@ -208,12 +208,12 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct, updateProduct
               .map((product) => (
                 <TableRow key={product.id} onDoubleClick={() => handleDoubleClickOnEdit(product)}>
                   <TableCell align="center" width={"5%"} sx={{ borderColor: colors.border }}>
-                    <IconButton disabled={isNotSuperAdmin} aria-label="delete" size="large" onClick={() => deleteProduct(product.id)}>
+                    <IconButton disabled={isNotAdmin} aria-label="delete" size="large" onClick={() => deleteProduct(product.id)}>
                       <DeleteIcon fontSize="inherit" />
                     </IconButton>
                   </TableCell>
                   <TableCell align="center" sx={{ borderColor: colors.border }}>
-                    <IconButton disabled={isNotSuperAdmin} size="large" color="inherit" aria-label="menu" onClick={() => handleOpen(product)}>
+                    <IconButton disabled={isNotAdmin} size="large" color="inherit" aria-label="menu" onClick={() => handleOpen(product)}>
                       <EditIcon />
                     </IconButton>
                   </TableCell>
