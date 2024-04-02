@@ -15,82 +15,36 @@ datasource db {
 }
 
 model Category {
-  id       Int       @id @default(autoincrement())
-  name     String
+    id        String    @id @default(cuid())
+    name      String
+    products  Product[]
+    @@map(name: "categories")
 }
 
 model Product {
-  id         Int      @id @default(autoincrement())
-  itemId     String
-  name       String
-  fullPrice  Int
-  price      Int
-  screen     String
-  capacity   String
-  color      String
-  ram        String
-  year       Int
-  image      String
-  categoryId Int
+    id                String   @id @default(cuid())
+    categoryId        String
+    category          Category @relation(fields: [categoryId], references: [id])
+    color             String
+    capacity          String
+    name              String
+    fullPrice         Int
+    price             Int
+    screen            String
+    ram               String
+    year              Int
+    images            String[]
+    colorsAvailable   String[]
+    capacityAvailable String[]
+    description       String
+    resolution        String
+    processor         String
+    cell              String[]
+    @@map(name: "products")
 }
 
-// model Phone {
-//   	id String @id
-// 	namespaceId String
-// 	name String
-// 	capacityAvailable Json
-// 	capacity String
-// 	priceRegular Int
-// 	priceDiscount Int
-// 	colorsAvailable Json
-// 	color String
-// 	images Json
-// 	description Json
-// 	screen String
-// 	resolution String
-// 	processor String
-// 	ram String
-// 	camera String
-// 	zoom String
-// 	cell Json
-//   }
-
-//   model Accessory {
-// 	id String @id
-// 	namespaceId String
-// 	name String
-// 	capacityAvailable Json
-// 	capacity String
-// 	priceRegular Int
-// 	priceDiscount Int
-// 	colorsAvailable Json
-// 	color String
-// 	images Json
-// 	description Json
-// 	screen String
-// 	resolution String
-// 	processor String
-// 	ram String
-// 	cell Json
-//   }
-
-//   model Tablet {
-// 	id String @id
-// 	namespaceId String
-// 	name String
-// 	capacityAvailable Json
-// 	capacity String
-// 	priceRegular Int
-// 	priceDiscount Int
-// 	colorsAvailable Json
-// 	color String
-// 	images Json
-// 	description Json
-// 	screen String
-// 	resolution String
-// 	processor String
-// 	ram String
-// 	camera String
-// 	zoom String
-// 	cell Json
-//   }
+model User {
+    id        Int   @id @default(autoincrement())
+    name      String?
+    email     String?  @unique
+}
