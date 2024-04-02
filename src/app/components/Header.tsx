@@ -8,6 +8,7 @@ import { signOut, useSession } from "next-auth/react";
 import FormProduct, { EditProduct } from "./FormProduct";
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import AdminInfo from './AdminInfo';
 import { SessionWithUserRole } from "../configs/auth";
 
 const Header: React.FC = () => {
@@ -41,6 +42,9 @@ const Header: React.FC = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             New
           </Typography>
+
+          <AdminInfo adminName="Oleksandr" />
+
           <Link
             href="/api/auth/signin"
             onClick={() =>
