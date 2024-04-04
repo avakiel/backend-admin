@@ -11,7 +11,7 @@ export function formatProduct(product: Product) {
     color: product.color,
     screen: product.screen,
     year: product.year.toString(),
-    image: product.image,
+    image: product.images,
     categoryId: product.categoryId.toString(),
     capacity: product.capacity,
     ram: product.ram
