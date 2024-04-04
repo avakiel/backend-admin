@@ -48,7 +48,7 @@ const initialValues: Values = {
   color: "",
   screen: "",
   year: "",
-  image: ""
+  image: []
 };
 const initialErrors = {
   name: "",
@@ -70,7 +70,7 @@ interface Values {
   color: string;
   screen: string;
   year: string;
-  image: string;
+  image: string[];
 }
 
 interface Errors {
@@ -101,7 +101,7 @@ export interface EditProduct {
   color: string;
   screen: string;
   year: string;
-  image: string;
+  image: string[];
   categoryId: string;
   capacity: string;
   ram: string;

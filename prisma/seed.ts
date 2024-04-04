@@ -1,59 +1,60 @@
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from '@prisma/client';
+import { products, productsDetails } from '../seed_data/products/dataSeed';
+
 const prisma = new PrismaClient();
-const products = require('../seed_data/products/products.json');
-const phoneDetails = require('../seed_data/products/phone.json');
-const tabletDetails = require('../seed_data/products/tablets.json');
-const accessoriesDetails = require('../seed_data/products/accessories.json');
 
-async function seed() {
-  const categories = [
-    { name: 'Phone' },
-    { name: 'Tablet' },
-    { name: 'Accessories' }
-  ];
-
-  for (const category of categories) {
-    await prisma.category.upsert({
-      where: { name: category.name },
-      update: {},
-      create: category,
-    });
-  }
-
-  for (const product of products) {
-    let category;
-    switch (product.category) {
-      case 'Phone':
-        category = phoneDetails[product.year];
-        break;
-      case 'Tablet':
-        category = tabletDetails[product.year];
-        break;
-      case 'Accessories':
-        category = accessoriesDetails[product.year];
-        break;
-      default:
-        throw new Error('Unknown category');
-    }
-
-    await prisma.product.create({
-      data: {
-        ...product,
-        categoryId: category.id,
-      },
-    });
-  }
-}
+export const categories = ['phones', 'tablets', 'accessories'];
 
 async function main() {
-  try {
-    await seed();
-    console.log('Data seeded successfully!');
-  } catch (error) {
-    console.error('Error seeding data:', error);
-  } finally {
-    await prisma.$disconnect();
+  for (const category of categories) {
+      await prisma.category.create({
+          data: {
+              name: category,
+          }
+      })
+  }
+
+  for(const product of products) {
+      const category =  await prisma.category.findFirst({
+          where: {
+              name: product.category,
+          }
+      })
+
+      if (category) {
+          const details = productsDetails.find((prod) => prod.id === product.itemId)
+          await prisma.product.create({
+              data: {
+                  name: product.name,
+                  categoryId: category.id,
+                  fullPrice: product.fullPrice,
+                  itemId: product.itemId,
+                  price: product.price,
+                  screen: product.screen,
+                  capacity: product.capacity,
+                  color: product.color,
+                  ram: product.ram,
+                  year: product.year,
+                  colorsAvailable: details?.colorsAvailable || [],
+                  capacityAvailable: details?.capacityAvailable || [],
+                  description: JSON.stringify(details?.description || []),
+                  resolution: details?.resolution || '',
+                  processor: details?.processor || '',
+                  cell: details?.cell || [],
+                  images: details?.images || []
+              }
+          })
+      }
   }
 }
 
-main();
+
+main()
+    .then(async () => {
+        await prisma.$disconnect()
+    })
+    .catch(async (e) => {
+        console.error(e)
+        await prisma.$disconnect()
+        process.exit(1)
+    })
