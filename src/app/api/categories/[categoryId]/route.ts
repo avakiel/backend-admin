@@ -26,7 +26,7 @@ export async function GET(req: NextRequest, { params }: Params) {
           }
         });
 
-        return NextResponse.json(products)
+        return NextResponse.json(products);
     } catch (error) {
         return new NextResponse('Internal error', { status: 500 })
     }
