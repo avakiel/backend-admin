@@ -13,26 +13,20 @@ export async function GET(req: NextRequest, { params }: Params) {
       return new NextResponse("Product id is required", { status: 400 });
     }
 
-    const existingProduct = await prisma.product.findUnique({
+    const product = await prisma.product.findFirst({
       where: {
-        id: +params.productId
+        itemId: params.productId
       }
     });
 
-    if (!existingProduct) {
+    if (!product) {
       return new NextResponse("Product not found", { status: 404 });
     }
-
-    const product = await prisma.product.findUnique({
-      where: {
-        id: +params.productId
-      }
-    });
 
     return NextResponse.json(product);
 
   } catch (error) {
-    return new NextResponse("Internal error", { status: 500 });
+    return new NextResponse(`Internal error ${error}`, { status: 500 });
   }
 }
 
