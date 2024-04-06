@@ -137,17 +137,17 @@
   {
     "id": "10",
     "category": "phones",
-    "phoneId": "apple-iphone-11-pro-max-64gb-spacegray",
-    "itemId": "apple-iphone-11-pro-max-64gb-spacegray",
+    "phoneId": "apple-iphone-11-pro-max-64gb-space-gray",
+    "itemId": "apple-iphone-11-pro-max-64gb-space-gray",
     "name": "Apple iPhone 11 Pro Max 64GB Spacegray",
     "fullPrice": 1480,
     "price": 1400,
     "screen": "6.5' OLED",
     "capacity": "64GB",
-    "color": "spacegray",
+    "color": "space-gray",
     "ram": "4GB",
     "year": 2019,
-    "image": "img/phones/apple-iphone-11-pro-max/spacegray/00.png"
+    "image": "img/phones/apple-iphone-11-pro-max/space-gray/00.png"
   },
   {
     "id": "11",
@@ -167,17 +167,17 @@
   {
     "id": "12",
     "category": "phones",
-    "phoneId": "apple-iphone-11-pro-max-512gb-spacegray",
-    "itemId": "apple-iphone-11-pro-max-512gb-spacegray",
+    "phoneId": "apple-iphone-11-pro-max-512gb-space-gray",
+    "itemId": "apple-iphone-11-pro-max-512gb-space-gray",
     "name": "Apple iPhone 11 Pro Max 512GB Spacegray",
     "fullPrice": 2020,
     "price": 1930,
     "screen": "6.5' OLED",
     "capacity": "512GB",
-    "color": "spacegray",
+    "color": "space-gray",
     "ram": "4GB",
     "year": 2019,
-    "image": "img/phones/apple-iphone-11-pro-max/spacegray/00.png"
+    "image": "img/phones/apple-iphone-11-pro-max/space-gray/00.png"
   },
   {
     "id": "13",
@@ -212,17 +212,17 @@
   {
     "id": "15",
     "category": "phones",
-    "phoneId": "apple-iphone-xs-64gb-spacegray",
-    "itemId": "apple-iphone-xs-64gb-spacegray",
+    "phoneId": "apple-iphone-xs-64gb-space-gray",
+    "itemId": "apple-iphone-xs-64gb-space-gray",
     "name": "Apple iPhone XS 64GB Spacegray",
     "fullPrice": 760,
     "price": 720,
     "screen": "5.8' OLED",
     "capacity": "64GB",
-    "color": "spacegray",
+    "color": "space-gray",
     "ram": "4GB",
     "year": 2018,
-    "image": "img/phones/apple-iphone-xs/spacegray/00.png"
+    "image": "img/phones/apple-iphone-xs/space-gray/00.png"
   },
   {
     "id": "16",
@@ -287,17 +287,17 @@
   {
     "id": "20",
     "category": "phones",
-    "phoneId": "apple-iphone-8-64gb-spacegray",
-    "itemId": "apple-iphone-8-64gb-spacegray",
+    "phoneId": "apple-iphone-8-64gb-space-gray",
+    "itemId": "apple-iphone-8-64gb-space-gray",
     "name": "Apple iPhone 8 64GB Space Gray",
     "fullPrice": 600,
     "price": 550,
     "screen": "4.7' IPS",
     "capacity": "64GB",
-    "color": "spacegray",
+    "color": "space-gray",
     "ram": "2GB",
     "year": 2017,
-    "image": "img/phones/apple-iphone-8/spacegray/00.png"
+    "image": "img/phones/apple-iphone-8/space-gray/00.png"
   },
   {
     "id": "21",
@@ -362,17 +362,17 @@
   {
     "id": "25",
     "category": "phones",
-    "phoneId": "apple-iphone-11-pro-512gb-spacegray",
-    "itemId": "apple-iphone-11-pro-512gb-spacegray",
+    "phoneId": "apple-iphone-11-pro-512gb-space-gray",
+    "itemId": "apple-iphone-11-pro-512gb-space-gray",
     "name": "Apple iPhone 11 Pro 512GB Spacegray",
     "fullPrice": 1880,
     "price": 1780,
     "screen": "5.8' OLED",
     "capacity": "512GB",
-    "color": "spacegray",
+    "color": "space-gray",
     "ram": "4GB",
     "year": 2019,
-    "image": "img/phones/apple-iphone-11-pro/spacegray/00.png"
+    "image": "img/phones/apple-iphone-11-pro/space-gray/00.png"
   },
   {
     "id": "26",
@@ -467,17 +467,17 @@
   {
     "id": "32",
     "category": "phones",
-    "phoneId": "apple-iphone-xs-256gb-spacegray",
-    "itemId": "apple-iphone-xs-256gb-spacegray",
+    "phoneId": "apple-iphone-xs-256gb-space-gray",
+    "itemId": "apple-iphone-xs-256gb-space-gray",
     "name": "Apple iPhone XS 256GB Spacegray",
     "fullPrice": 960,
     "price": 900,
     "screen": "5.8' OLED",
     "capacity": "256GB",
-    "color": "spacegray",
+    "color": "space-gray",
     "ram": "4GB",
     "year": 2018,
-    "image": "img/phones/apple-iphone-xs/spacegray/00.png"
+    "image": "img/phones/apple-iphone-xs/space-gray/00.png"
   },
   {
     "id": "33",
@@ -512,17 +512,17 @@
   {
     "id": "35",
     "category": "phones",
-    "phoneId": "apple-iphone-7-32gb-rosegold",
-    "itemId": "apple-iphone-7-32gb-rosegold",
+    "phoneId": "apple-iphone-7-32gb-rose-gold",
+    "itemId": "apple-iphone-7-32gb-rose-gold",
     "name": "Apple iPhone 7 32GB Rosegold",
     "fullPrice": 400,
     "price": 375,
     "screen": "4.7' IPS",
     "capacity": "32GB",
-    "color": "rosegold",
+    "color": "rose-gold",
     "ram": "2GB",
     "year": 2016,
-    "image": "img/phones/apple-iphone-7/rosegold/00.png"
+    "image": "img/phones/apple-iphone-7/rose-gold/00.png"
   },
   {
     "id": "36",
@@ -647,17 +647,17 @@
   {
     "id": "44",
     "category": "phones",
-    "phoneId": "apple-iphone-11-pro-max-256gb-spacegray",
-    "itemId": "apple-iphone-11-pro-max-256gb-spacegray",
+    "phoneId": "apple-iphone-11-pro-max-256gb-space-gray",
+    "itemId": "apple-iphone-11-pro-max-256gb-space-gray",
     "name": "Apple iPhone 11 Pro Max 256GB Spacegray",
     "fullPrice": 1776,
     "price": 1680,
     "screen": "6.5' OLED",
     "capacity": "256GB",
-    "color": "spacegray",
+    "color": "space-gray",
     "ram": "4GB",
     "year": 2019,
-    "image": "img/phones/apple-iphone-11-pro-max/spacegray/00.png"
+    "image": "img/phones/apple-iphone-11-pro-max/space-gray/00.png"
   },
   {
     "id": "45",
@@ -707,32 +707,32 @@
   {
     "id": "48",
     "category": "phones",
-    "phoneId": "apple-iphone-xs-max-64gb-spacegray",
-    "itemId": "apple-iphone-xs-max-64gb-spacegray",
+    "phoneId": "apple-iphone-xs-max-64gb-space-gray",
+    "itemId": "apple-iphone-xs-max-64gb-space-gray",
     "name": "Apple iPhone XS Max 64GB Spacegray",
     "fullPrice": 960,
     "price": 900,
     "screen": "6.5' OLED",
     "capacity": "64GB",
-    "color": "spacegray",
+    "color": "space-gray",
     "ram": "4GB",
     "year": 2018,
-    "image": "img/phones/apple-iphone-xs-max/spacegray/00.png"
+    "image": "img/phones/apple-iphone-xs-max/space-gray/00.png"
   },
   {
     "id": "49",
     "category": "phones",
-    "phoneId": "apple-iphone-7-plus-32gb-rosegold",
-    "itemId": "apple-iphone-7-plus-32gb-rosegold",
+    "phoneId": "apple-iphone-7-plus-32gb-rose-gold",
+    "itemId": "apple-iphone-7-plus-32gb-rose-gold",
     "name": "Apple iPhone 7 Plus 32GB Rosegold",
     "fullPrice": 540,
     "price": 500,
     "screen": "5.5' IPS",
     "capacity": "32GB",
-    "color": "rosegold",
+    "color": "rose-gold",
     "ram": "3GB",
     "year": 2016,
-    "image": "img/phones/apple-iphone-7-plus/rosegold/00.png"
+    "image": "img/phones/apple-iphone-7-plus/rose-gold/00.png"
   },
   {
     "id": "50",
@@ -812,17 +812,17 @@
   {
     "id": "55",
     "category": "phones",
-    "phoneId": "apple-iphone-11-pro-64gb-spacegray",
-    "itemId": "apple-iphone-11-pro-64gb-spacegray",
+    "phoneId": "apple-iphone-11-pro-64gb-space-gray",
+    "itemId": "apple-iphone-11-pro-64gb-space-gray",
     "name": "Apple iPhone 11 Pro 64GB Spacegray",
     "fullPrice": 1312,
     "price": 1270,
     "screen": "5.8' OLED",
     "capacity": "64GB",
-    "color": "spacegray",
+    "color": "space-gray",
     "ram": "4GB",
     "year": 2019,
-    "image": "img/phones/apple-iphone-11-pro/spacegray/00.png"
+    "image": "img/phones/apple-iphone-11-pro/space-gray/00.png"
   },
   {
     "id": "56",
@@ -962,17 +962,17 @@
   {
     "id": "65",
     "category": "phones",
-    "phoneId": "apple-iphone-11-pro-256gb-spacegray",
-    "itemId": "apple-iphone-11-pro-256gb-spacegray",
+    "phoneId": "apple-iphone-11-pro-256gb-space-gray",
+    "itemId": "apple-iphone-11-pro-256gb-space-gray",
     "name": "Apple iPhone 11 Pro 256GB Spacegray",
     "fullPrice": 1640,
     "price": 1570,
     "screen": "5.8' OLED",
     "capacity": "256GB",
-    "color": "spacegray",
+    "color": "space-gray",
     "ram": "4GB",
     "year": 2019,
-    "image": "img/phones/apple-iphone-11-pro/spacegray/00.png"
+    "image": "img/phones/apple-iphone-11-pro/space-gray/00.png"
   },
   {
     "id": "66",
@@ -1007,17 +1007,17 @@
   {
     "id": "68",
     "category": "phones",
-    "phoneId": "apple-iphone-xs-max-256gb-spacegray",
-    "itemId": "apple-iphone-xs-max-256gb-spacegray",
+    "phoneId": "apple-iphone-xs-max-256gb-space-gray",
+    "itemId": "apple-iphone-xs-max-256gb-space-gray",
     "name": "Apple iPhone XS Max 256GB Spacegray",
     "fullPrice": 1080,
     "price": 1000,
     "screen": "6.5' OLED",
     "capacity": "256GB",
-    "color": "spacegray",
+    "color": "space-gray",
     "ram": "4GB",
     "year": 2018,
-    "image": "img/phones/apple-iphone-xs-max/spacegray/00.png"
+    "image": "img/phones/apple-iphone-xs-max/space-gray/00.png"
   },
   {
     "id": "69",

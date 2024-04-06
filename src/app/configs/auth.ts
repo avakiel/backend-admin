@@ -39,6 +39,7 @@ const users = [
 
 export const authConfig = {
   providers: [
+    
     Credentials({
       credentials: {
         email: { label: 'Email', type: 'email', required: true },

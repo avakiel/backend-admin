@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Tabs, Tab, Typography, Box } from "@mui/material";
+import { Tabs, Tab, Box } from "@mui/material";
 import ProductsTable from "./ProductTable";
 import { Product } from "@prisma/client";
 import axios from "axios";

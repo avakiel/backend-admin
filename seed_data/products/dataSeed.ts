@@ -128,16 +128,16 @@ export const products = [
     {
         "id": 10,
         "category": "phones",
-        "itemId": "apple-iphone-11-pro-max-64gb-spacegray",
+        "itemId": "apple-iphone-11-pro-max-64gb-space-gray",
         "name": "Apple iPhone 11 Pro Max 64GB Spacegray",
         "fullPrice": 1480,
         "price": 1400,
         "screen": "6.5' OLED",
         "capacity": "64GB",
-        "color": "spacegray",
+        "color": "space-gray",
         "ram": "4GB",
         "year": 2019,
-        "image": "img/phones/apple-iphone-11-pro-max/spacegray/00.jpg"
+        "image": "img/phones/apple-iphone-11-pro-max/space-gray/00.jpg"
     },
     {
         "id": 11,
@@ -156,16 +156,16 @@ export const products = [
     {
         "id": 12,
         "category": "phones",
-        "itemId": "apple-iphone-11-pro-max-512gb-spacegray",
+        "itemId": "apple-iphone-11-pro-max-512gb-space-gray",
         "name": "Apple iPhone 11 Pro Max 512GB Spacegray",
         "fullPrice": 2020,
         "price": 1930,
         "screen": "6.5' OLED",
         "capacity": "512GB",
-        "color": "spacegray",
+        "color": "space-gray",
         "ram": "4GB",
         "year": 2019,
-        "image": "img/phones/apple-iphone-11-pro-max/spacegray/00.jpg"
+        "image": "img/phones/apple-iphone-11-pro-max/space-gray/00.jpg"
     },
     {
         "id": 13,
@@ -198,16 +198,16 @@ export const products = [
     {
         "id": 15,
         "category": "phones",
-        "itemId": "apple-iphone-xs-64gb-spacegray",
+        "itemId": "apple-iphone-xs-64gb-space-gray",
         "name": "Apple iPhone XS 64GB Spacegray",
         "fullPrice": 760,
         "price": 720,
         "screen": "5.8' OLED",
         "capacity": "64GB",
-        "color": "spacegray",
+        "color": "space-gray",
         "ram": "4GB",
         "year": 2018,
-        "image": "img/phones/apple-iphone-xs/spacegray/00.jpg"
+        "image": "img/phones/apple-iphone-xs/space-gray/00.jpg"
     },
     {
         "id": 16,
@@ -268,16 +268,16 @@ export const products = [
     {
         "id": 20,
         "category": "phones",
-        "itemId": "apple-iphone-8-64gb-spacegray",
+        "itemId": "apple-iphone-8-64gb-space-gray",
         "name": "Apple iPhone 8 64GB Space Gray",
         "fullPrice": 600,
         "price": 550,
         "screen": "4.7' IPS",
         "capacity": "64GB",
-        "color": "spacegray",
+        "color": "space-gray",
         "ram": "2GB",
         "year": 2017,
-        "image": "img/phones/apple-iphone-8/spacegray/00.jpg"
+        "image": "img/phones/apple-iphone-8/space-gray/00.jpg"
     },
     {
         "id": 21,
@@ -338,16 +338,16 @@ export const products = [
     {
         "id": 25,
         "category": "phones",
-        "itemId": "apple-iphone-11-pro-512gb-spacegray",
+        "itemId": "apple-iphone-11-pro-512gb-space-gray",
         "name": "Apple iPhone 11 Pro 512GB Spacegray",
         "fullPrice": 1880,
         "price": 1780,
         "screen": "5.8' OLED",
         "capacity": "512GB",
-        "color": "spacegray",
+        "color": "space-gray",
         "ram": "4GB",
         "year": 2019,
-        "image": "img/phones/apple-iphone-11-pro/spacegray/00.jpg"
+        "image": "img/phones/apple-iphone-11-pro/space-gray/00.jpg"
     },
     {
         "id": 26,
@@ -436,16 +436,16 @@ export const products = [
     {
         "id": 32,
         "category": "phones",
-        "itemId": "apple-iphone-xs-256gb-spacegray",
+        "itemId": "apple-iphone-xs-256gb-space-gray",
         "name": "Apple iPhone XS 256GB Spacegray",
         "fullPrice": 960,
         "price": 900,
         "screen": "5.8' OLED",
         "capacity": "256GB",
-        "color": "spacegray",
+        "color": "space-gray",
         "ram": "4GB",
         "year": 2018,
-        "image": "img/phones/apple-iphone-xs/spacegray/00.jpg"
+        "image": "img/phones/apple-iphone-xs/space-gray/00.jpg"
     },
     {
         "id": 33,
@@ -478,16 +478,16 @@ export const products = [
     {
         "id": 35,
         "category": "phones",
-        "itemId": "apple-iphone-7-32gb-rosegold",
+        "itemId": "apple-iphone-7-32gb-rose-gold",
         "name": "Apple iPhone 7 32GB Rosegold",
         "fullPrice": 400,
         "price": 375,
         "screen": "4.7' IPS",
         "capacity": "32GB",
-        "color": "rosegold",
+        "color": "rose-gold",
         "ram": "2GB",
         "year": 2016,
-        "image": "img/phones/apple-iphone-7/rosegold/00.jpg"
+        "image": "img/phones/apple-iphone-7/rose-gold/00.jpg"
     },
     {
         "id": 36,
@@ -604,16 +604,16 @@ export const products = [
     {
         "id": 44,
         "category": "phones",
-        "itemId": "apple-iphone-11-pro-max-256gb-spacegray",
+        "itemId": "apple-iphone-11-pro-max-256gb-space-gray",
         "name": "Apple iPhone 11 Pro Max 256GB Spacegray",
         "fullPrice": 1776,
         "price": 1680,
         "screen": "6.5' OLED",
         "capacity": "256GB",
-        "color": "spacegray",
+        "color": "space-gray",
         "ram": "4GB",
         "year": 2019,
-        "image": "img/phones/apple-iphone-11-pro-max/spacegray/00.jpg"
+        "image": "img/phones/apple-iphone-11-pro-max/space-gray/00.jpg"
     },
     {
         "id": 45,
@@ -660,30 +660,30 @@ export const products = [
     {
         "id": 48,
         "category": "phones",
-        "itemId": "apple-iphone-xs-max-64gb-spacegray",
+        "itemId": "apple-iphone-xs-max-64gb-space-gray",
         "name": "Apple iPhone XS Max 64GB Spacegray",
         "fullPrice": 960,
         "price": 900,
         "screen": "6.5' OLED",
         "capacity": "64GB",
-        "color": "spacegray",
+        "color": "space-gray",
         "ram": "4GB",
         "year": 2018,
-        "image": "img/phones/apple-iphone-xs-max/spacegray/00.jpg"
+        "image": "img/phones/apple-iphone-xs-max/space-gray/00.jpg"
     },
     {
         "id": 49,
         "category": "phones",
-        "itemId": "apple-iphone-7-plus-32gb-rosegold",
+        "itemId": "apple-iphone-7-plus-32gb-rose-gold",
         "name": "Apple iPhone 7 Plus 32GB Rosegold",
         "fullPrice": 540,
         "price": 500,
         "screen": "5.5' IPS",
         "capacity": "32GB",
-        "color": "rosegold",
+        "color": "rose-gold",
         "ram": "3GB",
         "year": 2016,
-        "image": "img/phones/apple-iphone-7-plus/rosegold/00.jpg"
+        "image": "img/phones/apple-iphone-7-plus/rose-gold/00.jpg"
     },
     {
         "id": 50,
@@ -758,16 +758,16 @@ export const products = [
     {
         "id": 55,
         "category": "phones",
-        "itemId": "apple-iphone-11-pro-64gb-spacegray",
+        "itemId": "apple-iphone-11-pro-64gb-space-gray",
         "name": "Apple iPhone 11 Pro 64GB Spacegray",
         "fullPrice": 1312,
         "price": 1270,
         "screen": "5.8' OLED",
         "capacity": "64GB",
-        "color": "spacegray",
+        "color": "space-gray",
         "ram": "4GB",
         "year": 2019,
-        "image": "img/phones/apple-iphone-11-pro/spacegray/00.jpg"
+        "image": "img/phones/apple-iphone-11-pro/space-gray/00.jpg"
     },
     {
         "id": 56,
@@ -898,16 +898,16 @@ export const products = [
     {
         "id": 65,
         "category": "phones",
-        "itemId": "apple-iphone-11-pro-256gb-spacegray",
+        "itemId": "apple-iphone-11-pro-256gb-space-gray",
         "name": "Apple iPhone 11 Pro 256GB Spacegray",
         "fullPrice": 1640,
         "price": 1570,
         "screen": "5.8' OLED",
         "capacity": "256GB",
-        "color": "spacegray",
+        "color": "space-gray",
         "ram": "4GB",
         "year": 2019,
-        "image": "img/phones/apple-iphone-11-pro/spacegray/00.jpg"
+        "image": "img/phones/apple-iphone-11-pro/space-gray/00.jpg"
     },
     {
         "id": 66,
@@ -940,16 +940,16 @@ export const products = [
     {
         "id": 68,
         "category": "phones",
-        "itemId": "apple-iphone-xs-max-256gb-spacegray",
+        "itemId": "apple-iphone-xs-max-256gb-space-gray",
         "name": "Apple iPhone XS Max 256GB Spacegray",
         "fullPrice": 1080,
         "price": 1000,
         "screen": "6.5' OLED",
         "capacity": "256GB",
-        "color": "spacegray",
+        "color": "space-gray",
         "ram": "4GB",
         "year": 2018,
-        "image": "img/phones/apple-iphone-xs-max/spacegray/00.jpg"
+        "image": "img/phones/apple-iphone-xs-max/space-gray/00.jpg"
     },
     {
         "id": 69,
@@ -1688,7 +1688,7 @@ export const products = [
         "price": 169,
         "screen": "1.3' OLED",
         "capacity": "38mm",
-        "color": "space gray",
+        "color": "space-gray",
         "ram": "768MB",
         "year": 2017,
         "image": "img/accessories/apple-watch-series-3/space-gray/00.jpg"
@@ -1702,7 +1702,7 @@ export const products = [
         "price": 219,
         "screen": "1.3' OLED",
         "capacity": "42mm",
-        "color": "space gray",
+        "color": "space-gray",
         "ram": "768MB",
         "year": 2017,
         "image": "img/accessories/apple-watch-series-3/space-gray/00.jpg"
@@ -1772,7 +1772,7 @@ export const products = [
         "price": 329,
         "screen": "1.57' OLED",
         "capacity": "40mm",
-        "color": "space gray",
+        "color": "space-gray",
         "ram": "1GB",
         "year": 2020,
         "image": "img/accessories/apple-watch-series-6/space-gray/00.jpg"
@@ -1786,7 +1786,7 @@ export const products = [
         "price": 359,
         "screen": "1.57' OLED",
         "capacity": "44mm",
-        "color": "space gray",
+        "color": "space-gray",
         "ram": "1GB",
         "year": 2020,
         "image": "img/accessories/apple-watch-series-6/space-gray/00.jpg"
@@ -2136,7 +2136,7 @@ export const products = [
         "price": 259,
         "screen": "1.57' OLED",
         "capacity": "40mm",
-        "color": "space gray",
+        "color": "space-gray",
         "ram": "1GB",
         "year": 2020,
         "image": "img/accessories/apple-watch-se/space-gray/00.jpg"
@@ -2150,7 +2150,7 @@ export const products = [
         "price": 289,
         "screen": "1.78' OLED",
         "capacity": "44mm",
-        "color": "space gray",
+        "color": "space-gray",
         "ram": "1GB",
         "year": 2020,
         "image": "img/accessories/apple-watch-se/space-gray/00.jpg"
@@ -2158,13 +2158,13 @@ export const products = [
     {
         "id": 155,
         "category": "tablets",
-        "itemId": "apple-ipad-pro-11-2021-128gb-spacegray",
+        "itemId": "apple-ipad-pro-11-2021-128gb-space-gray",
         "name": "Apple iPad Pro 11 (2021) 128GB Space Gray",
         "capacity": "128GB",
         "fullPrice": 799,
         "price": 749,
-        "color": "spacegray",
-        "image": "img/tablets/apple-ipad-pro-11-2021/spacegray/00.jpg",
+        "color": "space-gray",
+        "image": "img/tablets/apple-ipad-pro-11-2021/space-gray/00.jpg",
         "screen": "11' Liquid Retina",
         "ram": "8GB",
         "year": 2021
@@ -2177,7 +2177,7 @@ export const products = [
         "capacity": "128GB",
         "fullPrice": 799,
         "price": 749,
-        "color": "spacegray",
+        "color": "space-gray",
         "image": "img/tablets/apple-ipad-pro-11-2021/silver/00.jpg",
         "screen": "11' Liquid Retina",
         "ram": "8GB",
@@ -2186,13 +2186,13 @@ export const products = [
     {
         "id": 157,
         "category": "tablets",
-        "itemId": "apple-ipad-pro-11-2021-256gb-spacegray",
+        "itemId": "apple-ipad-pro-11-2021-256gb-space-gray",
         "name": "Apple iPad Pro 11 (2021) 256GB Space Gray",
         "capacity": "256GB",
         "fullPrice": 829,
         "price": 799,
-        "color": "spacegray",
-        "image": "img/tablets/apple-ipad-pro-11-2021/spacegray/00.jpg",
+        "color": "space-gray",
+        "image": "img/tablets/apple-ipad-pro-11-2021/space-gray/00.jpg",
         "screen": "11' Liquid Retina",
         "ram": "8GB",
         "year": 2021
@@ -2205,7 +2205,7 @@ export const products = [
         "capacity": "256GB",
         "fullPrice": 829,
         "price": 799,
-        "color": "spacegray",
+        "color": "space-gray",
         "image": "img/tablets/apple-ipad-pro-11-2021/silver/00.jpg",
         "screen": "11' Liquid Retina",
         "ram": "8GB",
@@ -2214,13 +2214,13 @@ export const products = [
     {
         "id": 159,
         "category": "tablets",
-        "itemId": "apple-ipad-pro-11-2021-512gb-spacegray",
+        "itemId": "apple-ipad-pro-11-2021-512gb-space-gray",
         "name": "Apple iPad Pro 11 (2021) 512GB Space Gray",
         "capacity": "512GB",
         "fullPrice": 869,
         "price": 819,
-        "color": "spacegray",
-        "image": "img/tablets/apple-ipad-pro-11-2021/spacegray/00.jpg",
+        "color": "space-gray",
+        "image": "img/tablets/apple-ipad-pro-11-2021/space-gray/00.jpg",
         "screen": "11' Liquid Retina",
         "ram": "8GB",
         "year": 2021
@@ -2242,13 +2242,13 @@ export const products = [
     {
         "id": 161,
         "category": "tablets",
-        "itemId": "apple-ipad-pro-11-2021-1tb-spacegray",
+        "itemId": "apple-ipad-pro-11-2021-1tb-space-gray",
         "name": "Apple iPad Pro 11 (2021) 1TB Space Gray",
         "capacity": "1TB",
         "fullPrice": 899,
         "price": 879,
-        "color": "spacegray",
-        "image": "img/tablets/apple-ipad-pro-11-2021/spacegray/00.jpg",
+        "color": "space-gray",
+        "image": "img/tablets/apple-ipad-pro-11-2021/space-gray/00.jpg",
         "screen": "11' Liquid Retina",
         "ram": "8GB",
         "year": 2021
@@ -2270,13 +2270,13 @@ export const products = [
     {
         "id": 163,
         "category": "tablets",
-        "itemId": "apple-ipad-pro-11-2021-2tb-spacegray",
+        "itemId": "apple-ipad-pro-11-2021-2tb-space-gray",
         "name": "Apple iPad Pro 11 (2021) 2TB Space Gray",
         "capacity": "2TB",
         "fullPrice": 999,
         "price": 939,
-        "color": "spacegray",
-        "image": "img/tablets/apple-ipad-pro-11-2021/spacegray/00.jpg",
+        "color": "space-gray",
+        "image": "img/tablets/apple-ipad-pro-11-2021/space-gray/00.jpg",
         "screen": "11' Liquid Retina",
         "ram": "8GB",
         "year": 2021
@@ -2303,7 +2303,7 @@ export const products = [
         "capacity": "256GB",
         "fullPrice": 749,
         "price": 699,
-        "color": "rose gold",
+        "color": "rose-gold",
         "image": "img/tablets/apple-ipad-air-4th-gen/rose-gold/00.jpg",
         "screen": "10.9' Liquid Retina",
         "ram": "4GB",
@@ -2317,7 +2317,7 @@ export const products = [
         "capacity": "64GB",
         "fullPrice": 599,
         "price": 549,
-        "color": "rose gold",
+        "color": "rose-gold",
         "image": "img/tablets/apple-ipad-air-4th-gen/rose-gold/00.jpg",
         "screen": "10.9' Liquid Retina",
         "ram": "4GB",
@@ -2410,13 +2410,13 @@ export const products = [
     {
         "id": 173,
         "category": "tablets",
-        "itemId": "apple-ipad-mini-6th-gen-256gb-spacegray",
+        "itemId": "apple-ipad-mini-6th-gen-256gb-space-gray",
         "name": "Apple iPad Mini (6th Gen) 256GB Space Gray",
         "capacity": "256GB",
         "fullPrice": 649,
         "price": 599,
-        "color": "spacegray",
-        "image": "img/tablets/apple-ipad-mini-6th-gen/spacegray/00.jpg",
+        "color": "space-gray",
+        "image": "img/tablets/apple-ipad-mini-6th-gen/space-gray/00.jpg",
         "screen": "8.3' Liquid Retina",
         "ram": "4GB",
         "year": 2021
@@ -2424,13 +2424,13 @@ export const products = [
     {
         "id": 174,
         "category": "tablets",
-        "itemId": "apple-ipad-mini-6th-gen-64gb-spacegray",
+        "itemId": "apple-ipad-mini-6th-gen-64gb-space-gray",
         "name": "Apple iPad Mini (6th Gen) 64GB Space Gray",
         "capacity": "64GB",
         "fullPrice": 499,
         "price": 469,
-        "color": "spacegray",
-        "image": "img/tablets/apple-ipad-mini-6th-gen/spacegray/00.jpg",
+        "color": "space-gray",
+        "image": "img/tablets/apple-ipad-mini-6th-gen/space-gray/00.jpg",
         "screen": "8.3' Liquid Retina",
         "ram": "4GB",
         "year": 2021
@@ -2550,13 +2550,13 @@ export const products = [
     {
         "id": 183,
         "category": "tablets",
-        "itemId": "apple-ipad-10-2-2020-128gb-spacegray",
+        "itemId": "apple-ipad-10-2-2020-128gb-space-gray",
         "name": "Apple iPad 10.2 (2020) 128GB Space Gray",
         "capacity": "128GB",
         "fullPrice": 429,
         "price": 399,
-        "color": "spacegray",
-        "image": "img/tablets/apple-ipad-10-2-2020/spacegray/00.jpg",
+        "color": "space-gray",
+        "image": "img/tablets/apple-ipad-10-2-2020/space-gray/00.jpg",
         "screen": "10.2' Retina",
         "ram": "3GB",
         "year": 2020
@@ -2564,13 +2564,13 @@ export const products = [
     {
         "id": 184,
         "category": "tablets",
-        "itemId": "apple-ipad-10-2-2020-32gb-spacegray",
+        "itemId": "apple-ipad-10-2-2020-32gb-space-gray",
         "name": "Apple iPad 10.2 (2020) 32GB Space Gray",
         "capacity": "32GB",
         "fullPrice": 329,
         "price": 299,
-        "color": "spacegray",
-        "image": "img/tablets/apple-ipad-10-2-2020/spacegray/00.jpg",
+        "color": "space-gray",
+        "image": "img/tablets/apple-ipad-10-2-2020/space-gray/00.jpg",
         "screen": "10.2' Retina",
         "ram": "3GB",
         "year": 2020
@@ -2606,13 +2606,13 @@ export const products = [
     {
         "id": 187,
         "category": "tablets",
-        "itemId": "apple-ipad-mini-5th-gen-256gb-spacegray",
+        "itemId": "apple-ipad-mini-5th-gen-256gb-space-gray",
         "name": "Apple iPad Mini (5th Gen) 256GB Space Gray",
         "capacity": "256GB",
         "fullPrice": 549,
         "price": 499,
-        "color": "spacegray",
-        "image": "img/tablets/apple-ipad-mini-5th-gen/spacegray/00.jpg",
+        "color": "space-gray",
+        "image": "img/tablets/apple-ipad-mini-5th-gen/space-gray/00.jpg",
         "screen": "7.9' Retina",
         "ram": "3GB",
         "year": 2019
@@ -2620,13 +2620,13 @@ export const products = [
     {
         "id": 188,
         "category": "tablets",
-        "itemId": "apple-ipad-mini-5th-gen-64gb-spacegray",
+        "itemId": "apple-ipad-mini-5th-gen-64gb-space-gray",
         "name": "Apple iPad Mini (5th Gen) 64GB Space Gray",
         "capacity": "64GB",
         "fullPrice": 549,
         "price": 499,
-        "color": "spacegray",
-        "image": "img/tablets/apple-ipad-mini-5th-gen/spacegray/00.jpg",
+        "color": "space-gray",
+        "image": "img/tablets/apple-ipad-mini-5th-gen/space-gray/00.jpg",
         "screen": "7.9' Retina",
         "ram": "3GB",
         "year": 2019
@@ -2730,11 +2730,11 @@ export const productsDetails = [
         "priceRegular": 199,
         "priceDiscount": 169,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold"
         ],
-        "color": "space gray",
+        "color": "space-gray",
         "images": [
             "img/accessories/apple-watch-series-3/space-gray/00.jpg",
             "img/accessories/apple-watch-series-3/space-gray/01.jpg",
@@ -2782,11 +2782,11 @@ export const productsDetails = [
         "priceRegular": 250,
         "priceDiscount": 219,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold"
         ],
-        "color": "space gray",
+        "color": "space-gray",
         "images": [
             "img/accessories/apple-watch-series-3/space-gray/00.jpg",
             "img/accessories/apple-watch-series-3/space-gray/01.jpg",
@@ -2834,7 +2834,7 @@ export const productsDetails = [
         "priceRegular": 199,
         "priceDiscount": 169,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold"
         ],
@@ -2886,7 +2886,7 @@ export const productsDetails = [
         "priceRegular": 250,
         "priceDiscount": 219,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold"
         ],
@@ -2938,7 +2938,7 @@ export const productsDetails = [
         "priceRegular": 199,
         "priceDiscount": 169,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold"
         ],
@@ -2990,7 +2990,7 @@ export const productsDetails = [
         "priceRegular": 250,
         "priceDiscount": 219,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold"
         ],
@@ -3042,13 +3042,13 @@ export const productsDetails = [
         "priceRegular": 399,
         "priceDiscount": 329,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold",
             "blue",
             "red"
         ],
-        "color": "space gray",
+        "color": "space-gray",
         "images": [
             "img/accessories/apple-watch-series-6/space-gray/00.jpg",
             "img/accessories/apple-watch-series-6/space-gray/01.jpg",
@@ -3096,13 +3096,13 @@ export const productsDetails = [
         "priceRegular": 429,
         "priceDiscount": 359,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold",
             "blue",
             "red"
         ],
-        "color": "space gray",
+        "color": "space-gray",
         "images": [
             "img/accessories/apple-watch-series-6/space-gray/00.jpg",
             "img/accessories/apple-watch-series-6/space-gray/01.jpg",
@@ -3150,7 +3150,7 @@ export const productsDetails = [
         "priceRegular": 399,
         "priceDiscount": 329,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold",
             "blue",
@@ -3204,7 +3204,7 @@ export const productsDetails = [
         "priceRegular": 429,
         "priceDiscount": 359,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold",
             "blue",
@@ -3258,7 +3258,7 @@ export const productsDetails = [
         "priceRegular": 399,
         "priceDiscount": 329,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold",
             "blue",
@@ -3312,7 +3312,7 @@ export const productsDetails = [
         "priceRegular": 429,
         "priceDiscount": 359,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold",
             "blue",
@@ -3366,7 +3366,7 @@ export const productsDetails = [
         "priceRegular": 399,
         "priceDiscount": 329,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold",
             "blue",
@@ -3420,7 +3420,7 @@ export const productsDetails = [
         "priceRegular": 429,
         "priceDiscount": 359,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold",
             "blue",
@@ -3474,7 +3474,7 @@ export const productsDetails = [
         "priceRegular": 399,
         "priceDiscount": 329,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold",
             "blue",
@@ -3528,7 +3528,7 @@ export const productsDetails = [
         "priceRegular": 429,
         "priceDiscount": 359,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold",
             "blue",
@@ -3584,7 +3584,7 @@ export const productsDetails = [
         "colorsAvailable": [
             "silver",
             "gold",
-            "space gray"
+            "space-gray"
         ],
         "color": "silver",
         "images": [
@@ -3634,7 +3634,7 @@ export const productsDetails = [
         "priceRegular": 429,
         "priceDiscount": 399,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold"
         ],
@@ -3688,7 +3688,7 @@ export const productsDetails = [
         "colorsAvailable": [
             "silver",
             "gold",
-            "space gray"
+            "space-gray"
         ],
         "color": "gold",
         "images": [
@@ -3738,7 +3738,7 @@ export const productsDetails = [
         "priceRegular": 429,
         "priceDiscount": 399,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold"
         ],
@@ -3792,7 +3792,7 @@ export const productsDetails = [
         "colorsAvailable": [
             "silver",
             "gold",
-            "space gray"
+            "space-gray"
         ],
         "color": "space-gray",
         "images": [
@@ -3842,7 +3842,7 @@ export const productsDetails = [
         "priceRegular": 429,
         "priceDiscount": 399,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold"
         ],
@@ -3896,7 +3896,7 @@ export const productsDetails = [
         "colorsAvailable": [
             "silver",
             "gold",
-            "space gray"
+            "space-gray"
         ],
         "color": "silver",
         "images": [
@@ -3948,7 +3948,7 @@ export const productsDetails = [
         "colorsAvailable": [
             "silver",
             "gold",
-            "space gray"
+            "space-gray"
         ],
         "color": "silver",
         "images": [
@@ -4000,7 +4000,7 @@ export const productsDetails = [
         "colorsAvailable": [
             "silver",
             "gold",
-            "space gray"
+            "space-gray"
         ],
         "color": "gold",
         "images": [
@@ -4052,7 +4052,7 @@ export const productsDetails = [
         "colorsAvailable": [
             "silver",
             "gold",
-            "space gray"
+            "space-gray"
         ],
         "color": "gold",
         "images": [
@@ -4104,7 +4104,7 @@ export const productsDetails = [
         "colorsAvailable": [
             "silver",
             "gold",
-            "space gray"
+            "space-gray"
         ],
         "color": "space-gray",
         "images": [
@@ -4156,7 +4156,7 @@ export const productsDetails = [
         "colorsAvailable": [
             "silver",
             "gold",
-            "space gray"
+            "space-gray"
         ],
         "color": "space-gray",
         "images": [
@@ -4208,7 +4208,7 @@ export const productsDetails = [
         "colorsAvailable": [
             "silver",
             "gold",
-            "space gray"
+            "space-gray"
         ],
         "color": "silver",
         "images": [
@@ -4260,7 +4260,7 @@ export const productsDetails = [
         "colorsAvailable": [
             "silver",
             "gold",
-            "space gray"
+            "space-gray"
         ],
         "color": "silver",
         "images": [
@@ -4311,7 +4311,7 @@ export const productsDetails = [
         "priceDiscount": 259,
         "colorsAvailable": [
             "silver",
-            "space gray",
+            "space-gray",
             "gold"
         ],
         "color": "gold",
@@ -4362,7 +4362,7 @@ export const productsDetails = [
         "priceRegular": 309,
         "priceDiscount": 289,
         "colorsAvailable": [
-            "space gray",
+            "space-gray",
             "silver",
             "gold"
         ],
@@ -4415,10 +4415,10 @@ export const productsDetails = [
         "priceDiscount": 259,
         "colorsAvailable": [
             "silver",
-            "space gray",
+            "space-gray",
             "gold"
         ],
-        "color": "space gray",
+        "color": "space-gray",
         "images": [
             "img/accessories/apple-watch-se/space-gray/00.jpg",
             "img/accessories/apple-watch-se/space-gray/01.jpg",
@@ -4467,10 +4467,10 @@ export const productsDetails = [
         "priceDiscount": 289,
         "colorsAvailable": [
             "silver",
-            "space gray",
+            "space-gray",
             "gold"
         ],
-        "color": "space gray",
+        "color": "space-gray",
         "images": [
             "img/accessories/apple-watch-se/space-gray/00.jpg",
             "img/accessories/apple-watch-se/space-gray/01.jpg",
@@ -5671,7 +5671,7 @@ export const productsDetails = [
         "priceRegular": 1640,
         "priceDiscount": 1570,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
@@ -5731,7 +5731,7 @@ export const productsDetails = [
         "priceRegular": 1640,
         "priceDiscount": 1570,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
@@ -5792,7 +5792,7 @@ export const productsDetails = [
         "priceRegular": 1640,
         "priceDiscount": 1570,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
@@ -5840,7 +5840,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-iphone-11-pro-256gb-spacegray",
+        "id": "apple-iphone-11-pro-256gb-space-gray",
         "namespaceId": "apple-iphone-11-pro",
         "name": "Apple iPhone 11 Pro 256GB Spacegray",
         "capacityAvailable": [
@@ -5852,16 +5852,16 @@ export const productsDetails = [
         "priceRegular": 1640,
         "priceDiscount": 1570,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/phones/apple-iphone-11-pro/spacegray/00.jpg",
-            "img/phones/apple-iphone-11-pro/spacegray/01.jpg",
-            "img/phones/apple-iphone-11-pro/spacegray/02.jpg"
+            "img/phones/apple-iphone-11-pro/space-gray/00.jpg",
+            "img/phones/apple-iphone-11-pro/space-gray/01.jpg",
+            "img/phones/apple-iphone-11-pro/space-gray/02.jpg"
         ],
         "description": [
             {
@@ -5912,7 +5912,7 @@ export const productsDetails = [
         "priceRegular": 1880,
         "priceDiscount": 1780,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
@@ -5972,7 +5972,7 @@ export const productsDetails = [
         "priceRegular": 1880,
         "priceDiscount": 1780,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
@@ -6033,7 +6033,7 @@ export const productsDetails = [
         "priceRegular": 1880,
         "priceDiscount": 1780,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
@@ -6081,7 +6081,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-iphone-11-pro-512gb-spacegray",
+        "id": "apple-iphone-11-pro-512gb-space-gray",
         "namespaceId": "apple-iphone-11-pro",
         "name": "Apple iPhone 11 Pro 512GB Spacegray",
         "capacityAvailable": [
@@ -6093,16 +6093,16 @@ export const productsDetails = [
         "priceRegular": 1880,
         "priceDiscount": 1780,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/phones/apple-iphone-11-pro/spacegray/00.jpg",
-            "img/phones/apple-iphone-11-pro/spacegray/01.jpg",
-            "img/phones/apple-iphone-11-pro/spacegray/02.jpg"
+            "img/phones/apple-iphone-11-pro/space-gray/00.jpg",
+            "img/phones/apple-iphone-11-pro/space-gray/01.jpg",
+            "img/phones/apple-iphone-11-pro/space-gray/02.jpg"
         ],
         "description": [
             {
@@ -6153,7 +6153,7 @@ export const productsDetails = [
         "priceRegular": 1312,
         "priceDiscount": 1270,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
@@ -6213,7 +6213,7 @@ export const productsDetails = [
         "priceRegular": 1312,
         "priceDiscount": 1270,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
@@ -6274,7 +6274,7 @@ export const productsDetails = [
         "priceRegular": 1312,
         "priceDiscount": 1270,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
@@ -6322,7 +6322,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-iphone-11-pro-64gb-spacegray",
+        "id": "apple-iphone-11-pro-64gb-space-gray",
         "namespaceId": "apple-iphone-11-pro",
         "name": "Apple iPhone 11 Pro 64GB Spacegray",
         "capacityAvailable": [
@@ -6334,16 +6334,16 @@ export const productsDetails = [
         "priceRegular": 1312,
         "priceDiscount": 1270,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/phones/apple-iphone-11-pro/spacegray/00.jpg",
-            "img/phones/apple-iphone-11-pro/spacegray/01.jpg",
-            "img/phones/apple-iphone-11-pro/spacegray/02.jpg"
+            "img/phones/apple-iphone-11-pro/space-gray/00.jpg",
+            "img/phones/apple-iphone-11-pro/space-gray/01.jpg",
+            "img/phones/apple-iphone-11-pro/space-gray/02.jpg"
         ],
         "description": [
             {
@@ -6394,7 +6394,7 @@ export const productsDetails = [
         "priceRegular": 1776,
         "priceDiscount": 1680,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
@@ -6454,7 +6454,7 @@ export const productsDetails = [
         "priceRegular": 1776,
         "priceDiscount": 1680,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
@@ -6514,7 +6514,7 @@ export const productsDetails = [
         "priceRegular": 1776,
         "priceDiscount": 1680,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
@@ -6562,7 +6562,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-iphone-11-pro-max-256gb-spacegray",
+        "id": "apple-iphone-11-pro-max-256gb-space-gray",
         "namespaceId": "apple-iphone-11-pro-max",
         "name": "Apple iPhone 11 Pro Max 256GB Spacegray",
         "capacityAvailable": [
@@ -6574,16 +6574,16 @@ export const productsDetails = [
         "priceRegular": 1776,
         "priceDiscount": 1680,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/phones/apple-iphone-11-pro-max/spacegray/00.jpg",
-            "img/phones/apple-iphone-11-pro-max/spacegray/01.jpg",
-            "img/phones/apple-iphone-11-pro-max/spacegray/02.jpg"
+            "img/phones/apple-iphone-11-pro-max/space-gray/00.jpg",
+            "img/phones/apple-iphone-11-pro-max/space-gray/01.jpg",
+            "img/phones/apple-iphone-11-pro-max/space-gray/02.jpg"
         ],
         "description": [
             {
@@ -6634,7 +6634,7 @@ export const productsDetails = [
         "priceRegular": 2020,
         "priceDiscount": 1930,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
@@ -6694,7 +6694,7 @@ export const productsDetails = [
         "priceRegular": 2020,
         "priceDiscount": 1930,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
@@ -6754,7 +6754,7 @@ export const productsDetails = [
         "priceRegular": 2020,
         "priceDiscount": 1930,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
@@ -6802,7 +6802,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-iphone-11-pro-max-512gb-spacegray",
+        "id": "apple-iphone-11-pro-max-512gb-space-gray",
         "namespaceId": "apple-iphone-11-pro-max",
         "name": "Apple iPhone 11 Pro Max 512GB Spacegray",
         "capacityAvailable": [
@@ -6814,16 +6814,16 @@ export const productsDetails = [
         "priceRegular": 2020,
         "priceDiscount": 1930,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/phones/apple-iphone-11-pro-max/spacegray/00.jpg",
-            "img/phones/apple-iphone-11-pro-max/spacegray/01.jpg",
-            "img/phones/apple-iphone-11-pro-max/spacegray/02.jpg"
+            "img/phones/apple-iphone-11-pro-max/space-gray/00.jpg",
+            "img/phones/apple-iphone-11-pro-max/space-gray/01.jpg",
+            "img/phones/apple-iphone-11-pro-max/space-gray/02.jpg"
         ],
         "description": [
             {
@@ -6874,7 +6874,7 @@ export const productsDetails = [
         "priceRegular": 1480,
         "priceDiscount": 1400,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
@@ -6934,7 +6934,7 @@ export const productsDetails = [
         "priceRegular": 1480,
         "priceDiscount": 1400,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
@@ -6994,7 +6994,7 @@ export const productsDetails = [
         "priceRegular": 1480,
         "priceDiscount": 1400,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
@@ -7042,7 +7042,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-iphone-11-pro-max-64gb-spacegray",
+        "id": "apple-iphone-11-pro-max-64gb-space-gray",
         "namespaceId": "apple-iphone-11-pro-max",
         "name": "Apple iPhone 11 Pro Max 64GB Spacegray",
         "capacityAvailable": [
@@ -7054,16 +7054,16 @@ export const productsDetails = [
         "priceRegular": 1480,
         "priceDiscount": 1400,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "midnightgreen",
             "gold",
             "silver"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/phones/apple-iphone-11-pro-max/spacegray/00.jpg",
-            "img/phones/apple-iphone-11-pro-max/spacegray/01.jpg",
-            "img/phones/apple-iphone-11-pro-max/spacegray/02.jpg"
+            "img/phones/apple-iphone-11-pro-max/space-gray/00.jpg",
+            "img/phones/apple-iphone-11-pro-max/space-gray/01.jpg",
+            "img/phones/apple-iphone-11-pro-max/space-gray/02.jpg"
         ],
         "description": [
             {
@@ -7113,7 +7113,7 @@ export const productsDetails = [
         "priceDiscount": 375,
         "colorsAvailable": [
             "black",
-            "rosegold",
+            "rose-gold",
             "gold",
             "silver"
         ],
@@ -7173,7 +7173,7 @@ export const productsDetails = [
         "priceDiscount": 375,
         "colorsAvailable": [
             "black",
-            "rosegold",
+            "rose-gold",
             "gold",
             "silver"
         ],
@@ -7222,7 +7222,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-iphone-7-32gb-rosegold",
+        "id": "apple-iphone-7-32gb-rose-gold",
         "namespaceId": "apple-iphone-7",
         "name": "Apple iPhone 7 32GB Rosegold",
         "capacityAvailable": [
@@ -7233,17 +7233,17 @@ export const productsDetails = [
         "priceDiscount": 375,
         "colorsAvailable": [
             "black",
-            "rosegold",
+            "rose-gold",
             "gold",
             "silver"
         ],
-        "color": "rosegold",
+        "color": "rose-gold",
         "images": [
-            "img/phones/apple-iphone-7/rosegold/00.jpg",
-            "img/phones/apple-iphone-7/rosegold/01.jpg",
-            "img/phones/apple-iphone-7/rosegold/02.jpg",
-            "img/phones/apple-iphone-7/rosegold/03.jpg",
-            "img/phones/apple-iphone-7/rosegold/04.jpg"
+            "img/phones/apple-iphone-7/rose-gold/00.jpg",
+            "img/phones/apple-iphone-7/rose-gold/01.jpg",
+            "img/phones/apple-iphone-7/rose-gold/02.jpg",
+            "img/phones/apple-iphone-7/rose-gold/03.jpg",
+            "img/phones/apple-iphone-7/rose-gold/04.jpg"
         ],
         "description": [
             {
@@ -7293,7 +7293,7 @@ export const productsDetails = [
         "priceDiscount": 375,
         "colorsAvailable": [
             "black",
-            "rosegold",
+            "rose-gold",
             "gold",
             "silver"
         ],
@@ -7353,7 +7353,7 @@ export const productsDetails = [
         "priceDiscount": 500,
         "colorsAvailable": [
             "black",
-            "rosegold",
+            "rose-gold",
             "gold",
             "silver"
         ],
@@ -7413,7 +7413,7 @@ export const productsDetails = [
         "priceDiscount": 500,
         "colorsAvailable": [
             "black",
-            "rosegold",
+            "rose-gold",
             "gold",
             "silver"
         ],
@@ -7462,7 +7462,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-iphone-7-plus-32gb-rosegold",
+        "id": "apple-iphone-7-plus-32gb-rose-gold",
         "namespaceId": "apple-iphone-7-plus",
         "name": "Apple iPhone 7 Plus 32GB Rosegold",
         "capacityAvailable": [
@@ -7473,17 +7473,17 @@ export const productsDetails = [
         "priceDiscount": 500,
         "colorsAvailable": [
             "black",
-            "rosegold",
+            "rose-gold",
             "gold",
             "silver"
         ],
-        "color": "rosegold",
+        "color": "rose-gold",
         "images": [
-            "img/phones/apple-iphone-7-plus/rosegold/00.jpg",
-            "img/phones/apple-iphone-7-plus/rosegold/01.jpg",
-            "img/phones/apple-iphone-7-plus/rosegold/02.jpg",
-            "img/phones/apple-iphone-7-plus/rosegold/03.jpg",
-            "img/phones/apple-iphone-7-plus/rosegold/04.jpg"
+            "img/phones/apple-iphone-7-plus/rose-gold/00.jpg",
+            "img/phones/apple-iphone-7-plus/rose-gold/01.jpg",
+            "img/phones/apple-iphone-7-plus/rose-gold/02.jpg",
+            "img/phones/apple-iphone-7-plus/rose-gold/03.jpg",
+            "img/phones/apple-iphone-7-plus/rose-gold/04.jpg"
         ],
         "description": [
             {
@@ -7533,7 +7533,7 @@ export const productsDetails = [
         "priceDiscount": 500,
         "colorsAvailable": [
             "black",
-            "rosegold",
+            "rose-gold",
             "gold",
             "silver"
         ],
@@ -7592,7 +7592,7 @@ export const productsDetails = [
         "priceRegular": 600,
         "priceDiscount": 550,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "gold",
             "silver"
         ],
@@ -7650,7 +7650,7 @@ export const productsDetails = [
         "priceRegular": 600,
         "priceDiscount": 550,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "gold",
             "silver"
         ],
@@ -7698,7 +7698,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-iphone-8-64gb-spacegray",
+        "id": "apple-iphone-8-64gb-space-gray",
         "namespaceId": "apple-iphone-8",
         "name": "Apple iPhone 8 64GB Space Gray",
         "capacityAvailable": [
@@ -7708,16 +7708,16 @@ export const productsDetails = [
         "priceRegular": 600,
         "priceDiscount": 550,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "gold",
             "silver"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/phones/apple-iphone-8/spacegray/00.jpg",
-            "img/phones/apple-iphone-8/spacegray/01.jpg",
-            "img/phones/apple-iphone-8/spacegray/02.jpg",
-            "img/phones/apple-iphone-8/spacegray/03.jpg"
+            "img/phones/apple-iphone-8/space-gray/00.jpg",
+            "img/phones/apple-iphone-8/space-gray/01.jpg",
+            "img/phones/apple-iphone-8/space-gray/02.jpg",
+            "img/phones/apple-iphone-8/space-gray/03.jpg"
         ],
         "description": [
             {
@@ -8253,7 +8253,7 @@ export const productsDetails = [
         "priceRegular": 960,
         "priceDiscount": 900,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "gold"
         ],
         "color": "gold",
@@ -8301,7 +8301,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-iphone-xs-256gb-spacegray",
+        "id": "apple-iphone-xs-256gb-space-gray",
         "namespaceId": "apple-iphone-xs",
         "name": "Apple iPhone XS 256GB Spacegray",
         "capacityAvailable": [
@@ -8312,16 +8312,16 @@ export const productsDetails = [
         "priceRegular": 960,
         "priceDiscount": 900,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "gold"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/phones/apple-iphone-xs/spacegray/00.jpg",
-            "img/phones/apple-iphone-xs/spacegray/01.jpg",
-            "img/phones/apple-iphone-xs/spacegray/02.jpg",
-            "img/phones/apple-iphone-xs/spacegray/03.jpg",
-            "img/phones/apple-iphone-xs/spacegray/04.jpg"
+            "img/phones/apple-iphone-xs/space-gray/00.jpg",
+            "img/phones/apple-iphone-xs/space-gray/01.jpg",
+            "img/phones/apple-iphone-xs/space-gray/02.jpg",
+            "img/phones/apple-iphone-xs/space-gray/03.jpg",
+            "img/phones/apple-iphone-xs/space-gray/04.jpg"
         ],
         "description": [
             {
@@ -8371,7 +8371,7 @@ export const productsDetails = [
         "priceRegular": 760,
         "priceDiscount": 720,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "gold"
         ],
         "color": "gold",
@@ -8419,7 +8419,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-iphone-xs-64gb-spacegray",
+        "id": "apple-iphone-xs-64gb-space-gray",
         "namespaceId": "apple-iphone-xs",
         "name": "Apple iPhone XS 64GB Spacegray",
         "capacityAvailable": [
@@ -8430,16 +8430,16 @@ export const productsDetails = [
         "priceRegular": 760,
         "priceDiscount": 720,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "gold"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/phones/apple-iphone-xs/spacegray/00.jpg",
-            "img/phones/apple-iphone-xs/spacegray/01.jpg",
-            "img/phones/apple-iphone-xs/spacegray/02.jpg",
-            "img/phones/apple-iphone-xs/spacegray/03.jpg",
-            "img/phones/apple-iphone-xs/spacegray/04.jpg"
+            "img/phones/apple-iphone-xs/space-gray/00.jpg",
+            "img/phones/apple-iphone-xs/space-gray/01.jpg",
+            "img/phones/apple-iphone-xs/space-gray/02.jpg",
+            "img/phones/apple-iphone-xs/space-gray/03.jpg",
+            "img/phones/apple-iphone-xs/space-gray/04.jpg"
         ],
         "description": [
             {
@@ -8489,7 +8489,7 @@ export const productsDetails = [
         "priceRegular": 1080,
         "priceDiscount": 1000,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "gold",
             "silver"
         ],
@@ -8549,7 +8549,7 @@ export const productsDetails = [
         "priceRegular": 1080,
         "priceDiscount": 1000,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "gold",
             "silver"
         ],
@@ -8598,7 +8598,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-iphone-xs-max-256gb-spacegray",
+        "id": "apple-iphone-xs-max-256gb-space-gray",
         "namespaceId": "apple-iphone-xs-max",
         "name": "Apple iPhone XS Max 256GB Spacegray",
         "capacityAvailable": [
@@ -8609,17 +8609,17 @@ export const productsDetails = [
         "priceRegular": 1080,
         "priceDiscount": 1000,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "gold",
             "silver"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/phones/apple-iphone-xs-max/spacegray/00.jpg",
-            "img/phones/apple-iphone-xs-max/spacegray/01.jpg",
-            "img/phones/apple-iphone-xs-max/spacegray/02.jpg",
-            "img/phones/apple-iphone-xs-max/spacegray/03.jpg",
-            "img/phones/apple-iphone-xs-max/spacegray/04.jpg"
+            "img/phones/apple-iphone-xs-max/space-gray/00.jpg",
+            "img/phones/apple-iphone-xs-max/space-gray/01.jpg",
+            "img/phones/apple-iphone-xs-max/space-gray/02.jpg",
+            "img/phones/apple-iphone-xs-max/space-gray/03.jpg",
+            "img/phones/apple-iphone-xs-max/space-gray/04.jpg"
         ],
         "description": [
             {
@@ -8669,7 +8669,7 @@ export const productsDetails = [
         "priceRegular": 960,
         "priceDiscount": 900,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "gold",
             "silver"
         ],
@@ -8729,7 +8729,7 @@ export const productsDetails = [
         "priceRegular": 960,
         "priceDiscount": 900,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "gold",
             "silver"
         ],
@@ -8778,7 +8778,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-iphone-xs-max-64gb-spacegray",
+        "id": "apple-iphone-xs-max-64gb-space-gray",
         "namespaceId": "apple-iphone-xs-max",
         "name": "Apple iPhone XS Max 64GB Spacegray",
         "capacityAvailable": [
@@ -8789,17 +8789,17 @@ export const productsDetails = [
         "priceRegular": 960,
         "priceDiscount": 900,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "gold",
             "silver"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/phones/apple-iphone-xs-max/spacegray/00.jpg",
-            "img/phones/apple-iphone-xs-max/spacegray/01.jpg",
-            "img/phones/apple-iphone-xs-max/spacegray/02.jpg",
-            "img/phones/apple-iphone-xs-max/spacegray/03.jpg",
-            "img/phones/apple-iphone-xs-max/spacegray/04.jpg"
+            "img/phones/apple-iphone-xs-max/space-gray/00.jpg",
+            "img/phones/apple-iphone-xs-max/space-gray/01.jpg",
+            "img/phones/apple-iphone-xs-max/space-gray/02.jpg",
+            "img/phones/apple-iphone-xs-max/space-gray/03.jpg",
+            "img/phones/apple-iphone-xs-max/space-gray/04.jpg"
         ],
         "description": [
             {
@@ -12112,7 +12112,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-ipad-pro-11-2021-128gb-spacegray",
+        "id": "apple-ipad-pro-11-2021-128gb-space-gray",
         "namespaceId": "apple-ipad-pro-11-2021",
         "name": "Apple iPad Pro 11 (2021) 128GB Space Gray",
         "capacityAvailable": [
@@ -12126,14 +12126,14 @@ export const productsDetails = [
         "priceRegular": 799,
         "priceDiscount": 749,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "silver"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/tablets/apple-ipad-pro-11-2021/spacegray/00.jpg",
-            "img/tablets/apple-ipad-pro-11-2021/spacegray/01.jpg",
-            "img/tablets/apple-ipad-pro-11-2021/spacegray/02.jpg"
+            "img/tablets/apple-ipad-pro-11-2021/space-gray/00.jpg",
+            "img/tablets/apple-ipad-pro-11-2021/space-gray/01.jpg",
+            "img/tablets/apple-ipad-pro-11-2021/space-gray/02.jpg"
         ],
         "description": [
             {
@@ -12169,7 +12169,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-ipad-pro-11-2021-256gb-spacegray",
+        "id": "apple-ipad-pro-11-2021-256gb-space-gray",
         "namespaceId": "apple-ipad-pro-11-2021",
         "name": "Apple iPad Pro 11 (2021) 256GB Space Gray",
         "capacityAvailable": [
@@ -12183,14 +12183,14 @@ export const productsDetails = [
         "priceRegular": 829,
         "priceDiscount": 799,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "silver"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/tablets/apple-ipad-pro-11-2021/spacegray/00.jpg",
-            "img/tablets/apple-ipad-pro-11-2021/spacegray/01.jpg",
-            "img/tablets/apple-ipad-pro-11-2021/spacegray/02.jpg"
+            "img/tablets/apple-ipad-pro-11-2021/space-gray/00.jpg",
+            "img/tablets/apple-ipad-pro-11-2021/space-gray/01.jpg",
+            "img/tablets/apple-ipad-pro-11-2021/space-gray/02.jpg"
         ],
         "description": [
             {
@@ -12226,7 +12226,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-ipad-pro-11-2021-512gb-spacegray",
+        "id": "apple-ipad-pro-11-2021-512gb-space-gray",
         "namespaceId": "apple-ipad-pro-11-2021",
         "name": "Apple iPad Pro 11 (2021) 512GB Space Gray",
         "capacityAvailable": [
@@ -12240,14 +12240,14 @@ export const productsDetails = [
         "priceRegular": 869,
         "priceDiscount": 819,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "silver"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/tablets/apple-ipad-pro-11-2021/spacegray/00.jpg",
-            "img/tablets/apple-ipad-pro-11-2021/spacegray/01.jpg",
-            "img/tablets/apple-ipad-pro-11-2021/spacegray/02.jpg"
+            "img/tablets/apple-ipad-pro-11-2021/space-gray/00.jpg",
+            "img/tablets/apple-ipad-pro-11-2021/space-gray/01.jpg",
+            "img/tablets/apple-ipad-pro-11-2021/space-gray/02.jpg"
         ],
         "description": [
             {
@@ -12283,7 +12283,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-ipad-pro-11-2021-1tb-spacegray",
+        "id": "apple-ipad-pro-11-2021-1tb-space-gray",
         "namespaceId": "apple-ipad-pro-11-2021",
         "name": "Apple iPad Pro 11 (2021) 1TB Space Gray",
         "capacityAvailable": [
@@ -12297,14 +12297,14 @@ export const productsDetails = [
         "priceRegular": 899,
         "priceDiscount": 879,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "silver"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/tablets/apple-ipad-pro-11-2021/spacegray/00.jpg",
-            "img/tablets/apple-ipad-pro-11-2021/spacegray/01.jpg",
-            "img/tablets/apple-ipad-pro-11-2021/spacegray/02.jpg"
+            "img/tablets/apple-ipad-pro-11-2021/space-gray/00.jpg",
+            "img/tablets/apple-ipad-pro-11-2021/space-gray/01.jpg",
+            "img/tablets/apple-ipad-pro-11-2021/space-gray/02.jpg"
         ],
         "description": [
             {
@@ -12340,7 +12340,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-ipad-pro-11-2021-2tb-spacegray",
+        "id": "apple-ipad-pro-11-2021-2tb-space-gray",
         "namespaceId": "apple-ipad-pro-11-2021",
         "name": "Apple iPad Pro 11 (2021) 2TB Space Gray",
         "capacityAvailable": [
@@ -12354,14 +12354,14 @@ export const productsDetails = [
         "priceRegular": 999,
         "priceDiscount": 939,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "silver"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/tablets/apple-ipad-pro-11-2021/spacegray/00.jpg",
-            "img/tablets/apple-ipad-pro-11-2021/spacegray/01.jpg",
-            "img/tablets/apple-ipad-pro-11-2021/spacegray/02.jpg"
+            "img/tablets/apple-ipad-pro-11-2021/space-gray/00.jpg",
+            "img/tablets/apple-ipad-pro-11-2021/space-gray/01.jpg",
+            "img/tablets/apple-ipad-pro-11-2021/space-gray/02.jpg"
         ],
         "description": [
             {
@@ -12411,7 +12411,7 @@ export const productsDetails = [
         "priceRegular": 799,
         "priceDiscount": 749,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "silver"
         ],
         "color": "silver",
@@ -12468,7 +12468,7 @@ export const productsDetails = [
         "priceRegular": 829,
         "priceDiscount": 799,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "silver"
         ],
         "color": "silver",
@@ -12525,7 +12525,7 @@ export const productsDetails = [
         "priceRegular": 869,
         "priceDiscount": 819,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "silver"
         ],
         "color": "silver",
@@ -12582,7 +12582,7 @@ export const productsDetails = [
         "priceRegular": 899,
         "priceDiscount": 879,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "silver"
         ],
         "color": "silver",
@@ -12639,7 +12639,7 @@ export const productsDetails = [
         "priceRegular": 999,
         "priceDiscount": 939,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "silver"
         ],
         "color": "silver",
@@ -12693,12 +12693,12 @@ export const productsDetails = [
         "priceRegular": 749,
         "priceDiscount": 699,
         "colorsAvailable": [
-            "rose gold",
+            "rose-gold",
             "silver",
             "green",
-            "sky blue"
+            "sky-blue"
         ],
-        "color": "rose gold",
+        "color": "rose-gold",
         "images": [
             "img/tablets/apple-ipad-air-4th-gen/rose-gold/00.jpg",
             "img/tablets/apple-ipad-air-4th-gen/rose-gold/01.jpg",
@@ -12750,12 +12750,12 @@ export const productsDetails = [
         "priceRegular": 599,
         "priceDiscount": 549,
         "colorsAvailable": [
-            "rose gold",
+            "rose-gold",
             "silver",
             "green",
-            "sky blue"
+            "sky-blue"
         ],
-        "color": "rose gold",
+        "color": "rose-gold",
         "images": [
             "img/tablets/apple-ipad-air-4th-gen/rose-gold/00.jpg",
             "img/tablets/apple-ipad-air-4th-gen/rose-gold/01.jpg",
@@ -12807,10 +12807,10 @@ export const productsDetails = [
         "priceRegular": 599,
         "priceDiscount": 549,
         "colorsAvailable": [
-            "rose gold",
+            "rose-gold",
             "silver",
             "green",
-            "sky blue"
+            "sky-blue"
         ],
         "color": "silver",
         "images": [
@@ -12864,10 +12864,10 @@ export const productsDetails = [
         "priceRegular": 749,
         "priceDiscount": 699,
         "colorsAvailable": [
-            "rose gold",
+            "rose-gold",
             "silver",
             "green",
-            "sky blue"
+            "sky-blue"
         ],
         "color": "silver",
         "images": [
@@ -12921,10 +12921,10 @@ export const productsDetails = [
         "priceRegular": 749,
         "priceDiscount": 699,
         "colorsAvailable": [
-            "rose gold",
+            "rose-gold",
             "silver",
             "green",
-            "sky blue"
+            "sky-blue"
         ],
         "color": "green",
         "images": [
@@ -12978,10 +12978,10 @@ export const productsDetails = [
         "priceRegular": 599,
         "priceDiscount": 549,
         "colorsAvailable": [
-            "rose gold",
+            "rose-gold",
             "silver",
             "green",
-            "sky blue"
+            "sky-blue"
         ],
         "color": "green",
         "images": [
@@ -13035,12 +13035,12 @@ export const productsDetails = [
         "priceRegular": 599,
         "priceDiscount": 549,
         "colorsAvailable": [
-            "rose gold",
+            "rose-gold",
             "silver",
             "green",
-            "sky blue"
+            "sky-blue"
         ],
-        "color": "sky blue",
+        "color": "sky-blue",
         "images": [
             "img/tablets/apple-ipad-air-4th-gen/sky-blue/00.jpg",
             "img/tablets/apple-ipad-air-4th-gen/sky-blue/01.jpg",
@@ -13092,12 +13092,12 @@ export const productsDetails = [
         "priceRegular": 749,
         "priceDiscount": 699,
         "colorsAvailable": [
-            "rose gold",
+            "rose-gold",
             "silver",
             "green",
-            "sky blue"
+            "sky-blue"
         ],
-        "color": "sky blue",
+        "color": "sky-blue",
         "images": [
             "img/tablets/apple-ipad-air-4th-gen/sky-blue/00.jpg",
             "img/tablets/apple-ipad-air-4th-gen/sky-blue/01.jpg",
@@ -13138,7 +13138,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-ipad-mini-6th-gen-64gb-spacegray",
+        "id": "apple-ipad-mini-6th-gen-64gb-space-gray",
         "namespaceId": "apple-ipad-mini-6th-gen",
         "name": "Apple iPad Mini (6th Gen) 64GB Space Gray",
         "capacityAvailable": [
@@ -13149,15 +13149,15 @@ export const productsDetails = [
         "priceRegular": 499,
         "priceDiscount": 469,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "starlight",
             "pink"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/tablets/apple-ipad-mini-6th-gen/spacegray/00.jpg",
-            "img/tablets/apple-ipad-mini-6th-gen/spacegray/01.jpg",
-            "img/tablets/apple-ipad-mini-6th-gen/spacegray/02.jpg"
+            "img/tablets/apple-ipad-mini-6th-gen/space-gray/00.jpg",
+            "img/tablets/apple-ipad-mini-6th-gen/space-gray/01.jpg",
+            "img/tablets/apple-ipad-mini-6th-gen/space-gray/02.jpg"
         ],
         "description": [
             {
@@ -13193,7 +13193,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-ipad-mini-6th-gen-256gb-spacegray",
+        "id": "apple-ipad-mini-6th-gen-256gb-space-gray",
         "namespaceId": "apple-ipad-mini-6th-gen",
         "name": "Apple iPad Mini (6th Gen) 256GB Space Gray",
         "capacityAvailable": [
@@ -13204,15 +13204,15 @@ export const productsDetails = [
         "priceRegular": 649,
         "priceDiscount": 599,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "starlight",
             "pink"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/tablets/apple-ipad-mini-6th-gen/spacegray/00.jpg",
-            "img/tablets/apple-ipad-mini-6th-gen/spacegray/01.jpg",
-            "img/tablets/apple-ipad-mini-6th-gen/spacegray/02.jpg"
+            "img/tablets/apple-ipad-mini-6th-gen/space-gray/00.jpg",
+            "img/tablets/apple-ipad-mini-6th-gen/space-gray/01.jpg",
+            "img/tablets/apple-ipad-mini-6th-gen/space-gray/02.jpg"
         ],
         "description": [
             {
@@ -13259,7 +13259,7 @@ export const productsDetails = [
         "priceRegular": 649,
         "priceDiscount": 599,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "starlight",
             "pink"
         ],
@@ -13314,7 +13314,7 @@ export const productsDetails = [
         "priceRegular": 499,
         "priceDiscount": 469,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "starlight",
             "pink"
         ],
@@ -13369,7 +13369,7 @@ export const productsDetails = [
         "priceRegular": 499,
         "priceDiscount": 469,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "starlight",
             "pink"
         ],
@@ -13424,7 +13424,7 @@ export const productsDetails = [
         "priceRegular": 649,
         "priceDiscount": 619,
         "colorsAvailable": [
-            "spacegray",
+            "space-gray",
             "starlight",
             "pink"
         ],
@@ -13481,7 +13481,7 @@ export const productsDetails = [
         "colorsAvailable": [
             "gold",
             "silver",
-            "spacegray"
+            "space-gray"
         ],
         "color": "gold",
         "images": [
@@ -13537,7 +13537,7 @@ export const productsDetails = [
         "colorsAvailable": [
             "gold",
             "silver",
-            "spacegray"
+            "space-gray"
         ],
         "color": "gold",
         "images": [
@@ -13593,7 +13593,7 @@ export const productsDetails = [
         "colorsAvailable": [
             "gold",
             "silver",
-            "spacegray"
+            "space-gray"
         ],
         "color": "silver",
         "images": [
@@ -13649,7 +13649,7 @@ export const productsDetails = [
         "colorsAvailable": [
             "gold",
             "silver",
-            "spacegray"
+            "space-gray"
         ],
         "color": "silver",
         "images": [
@@ -13692,7 +13692,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-ipad-10-2-2020-128gb-spacegray",
+        "id": "apple-ipad-10-2-2020-128gb-space-gray",
         "namespaceId": "apple-ipad-10-2-2020",
         "name": "Apple iPad 10.2 (2020) 128GB Space Gray",
         "capacityAvailable": [
@@ -13705,14 +13705,14 @@ export const productsDetails = [
         "colorsAvailable": [
             "gold",
             "silver",
-            "spacegray"
+            "space-gray"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/tablets/apple-ipad-10-2-2020/spacegray/00.jpg",
-            "img/tablets/apple-ipad-10-2-2020/spacegray/01.jpg",
-            "img/tablets/apple-ipad-10-2-2020/spacegray/02.jpg",
-            "img/tablets/apple-ipad-10-2-2020/spacegray/03.jpg"
+            "img/tablets/apple-ipad-10-2-2020/space-gray/00.jpg",
+            "img/tablets/apple-ipad-10-2-2020/space-gray/01.jpg",
+            "img/tablets/apple-ipad-10-2-2020/space-gray/02.jpg",
+            "img/tablets/apple-ipad-10-2-2020/space-gray/03.jpg"
         ],
         "description": [
             {
@@ -13748,7 +13748,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-ipad-10-2-2020-32gb-spacegray",
+        "id": "apple-ipad-10-2-2020-32gb-space-gray",
         "namespaceId": "apple-ipad-10-2-2020",
         "name": "Apple iPad 10.2 (2020) 32GB Space Gray",
         "capacityAvailable": [
@@ -13761,14 +13761,14 @@ export const productsDetails = [
         "colorsAvailable": [
             "gold",
             "silver",
-            "spacegray"
+            "space-gray"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/tablets/apple-ipad-10-2-2020/spacegray/00.jpg",
-            "img/tablets/apple-ipad-10-2-2020/spacegray/01.jpg",
-            "img/tablets/apple-ipad-10-2-2020/spacegray/02.jpg",
-            "img/tablets/apple-ipad-10-2-2020/spacegray/03.jpg"
+            "img/tablets/apple-ipad-10-2-2020/space-gray/00.jpg",
+            "img/tablets/apple-ipad-10-2-2020/space-gray/01.jpg",
+            "img/tablets/apple-ipad-10-2-2020/space-gray/02.jpg",
+            "img/tablets/apple-ipad-10-2-2020/space-gray/03.jpg"
         ],
         "description": [
             {
@@ -13816,7 +13816,7 @@ export const productsDetails = [
         "priceDiscount": 499,
         "colorsAvailable": [
             "silver",
-            "spacegray",
+            "space-gray",
             "gold"
         ],
         "color": "silver",
@@ -13870,7 +13870,7 @@ export const productsDetails = [
         "priceDiscount": 499,
         "colorsAvailable": [
             "silver",
-            "spacegray",
+            "space-gray",
             "gold"
         ],
         "color": "silver",
@@ -13912,7 +13912,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-ipad-mini-5th-gen-64gb-spacegray",
+        "id": "apple-ipad-mini-5th-gen-64gb-space-gray",
         "namespaceId": "apple-ipad-mini-5th-gen",
         "name": "Apple iPad Mini (5th Gen) 64GB Space Gray",
         "capacityAvailable": [
@@ -13924,13 +13924,13 @@ export const productsDetails = [
         "priceDiscount": 499,
         "colorsAvailable": [
             "silver",
-            "spacegray",
+            "space-gray",
             "gold"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/tablets/apple-ipad-mini-5th-gen/spacegray/00.jpg",
-            "img/tablets/apple-ipad-mini-5th-gen/spacegray/01.jpg"
+            "img/tablets/apple-ipad-mini-5th-gen/space-gray/00.jpg",
+            "img/tablets/apple-ipad-mini-5th-gen/space-gray/01.jpg"
         ],
         "description": [
             {
@@ -13966,7 +13966,7 @@ export const productsDetails = [
         ]
     },
     {
-        "id": "apple-ipad-mini-5th-gen-256gb-spacegray",
+        "id": "apple-ipad-mini-5th-gen-256gb-space-gray",
         "namespaceId": "apple-ipad-mini-5th-gen",
         "name": "Apple iPad Mini (5th Gen) 256GB Space Gray",
         "capacityAvailable": [
@@ -13978,13 +13978,13 @@ export const productsDetails = [
         "priceDiscount": 499,
         "colorsAvailable": [
             "silver",
-            "spacegray",
+            "space-gray",
             "gold"
         ],
-        "color": "spacegray",
+        "color": "space-gray",
         "images": [
-            "img/tablets/apple-ipad-mini-5th-gen/spacegray/00.jpg",
-            "img/tablets/apple-ipad-mini-5th-gen/spacegray/01.jpg"
+            "img/tablets/apple-ipad-mini-5th-gen/space-gray/00.jpg",
+            "img/tablets/apple-ipad-mini-5th-gen/space-gray/01.jpg"
         ],
         "description": [
             {
@@ -14032,7 +14032,7 @@ export const productsDetails = [
         "priceDiscount": 499,
         "colorsAvailable": [
             "silver",
-            "spacegray",
+            "space-gray",
             "gold"
         ],
         "color": "gold",
@@ -14086,7 +14086,7 @@ export const productsDetails = [
         "priceDiscount": 499,
         "colorsAvailable": [
             "silver",
-            "spacegray",
+            "space-gray",
             "gold"
         ],
         "color": "gold",
