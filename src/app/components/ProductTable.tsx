@@ -60,6 +60,8 @@ const ProductsTable: React.FC<Props> = ({ products, deleteProduct, updateProduct
   const [openModal, setOpenModal] = React.useState(false);
   const [editingProduct, setEditingProduct] = React.useState({} as Product);
 
+  console.log(products)
+
 
   const session = useSession() as unknown as SessionWithUserRole;
   const isNotAdmin = session.data?.user?.role !== "administrator";
