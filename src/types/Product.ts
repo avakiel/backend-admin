@@ -11,7 +11,7 @@ export interface Product {
   color: string;
   ram: string;
   year: number;
-  image: string;
+  image: string[];
 }
 
 export interface SelectedPhone {

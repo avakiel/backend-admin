@@ -1,43 +1,60 @@
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from '@prisma/client';
+import { products, productsDetails } from '../seed_data/products/dataSeed';
+
 const prisma = new PrismaClient();
-const data = require('../seed_data/products/products.json');
+
+export const categories = ['phones', 'tablets', 'accessories'];
 
 async function main() {
-  for (const record of data) {
-    try {
-      let category = await prisma.category.findFirst({
-        where: { name: record.category },
-      });
+  for (const category of categories) {
+      await prisma.category.create({
+          data: {
+              name: category,
+          }
+      })
+  }
 
-      if (!category) {
-        category = await prisma.category.create({
-          data: { name: record.category },
-        });
+  for(const product of products) {
+      const category =  await prisma.category.findFirst({
+          where: {
+              name: product.category,
+          }
+      })
+
+      if (category) {
+          const details = productsDetails.find((prod) => prod.id === product.itemId)
+          await prisma.product.create({
+              data: {
+                  name: product.name,
+                  categoryId: category.id,
+                  fullPrice: product.fullPrice,
+                  itemId: product.itemId,
+                  price: product.price,
+                  screen: product.screen,
+                  capacity: product.capacity,
+                  color: product.color,
+                  ram: product.ram,
+                  year: product.year,
+                  colorsAvailable: details?.colorsAvailable || [],
+                  capacityAvailable: details?.capacityAvailable || [],
+                  description: JSON.stringify(details?.description || []),
+                  resolution: details?.resolution || '',
+                  processor: details?.processor || '',
+                  cell: details?.cell || [],
+                  images: details?.images || []
+              }
+          })
       }
-
-      await prisma.product.create({
-        data: {
-          itemId: record.itemId,
-          name: record.name,
-          fullPrice: record.fullPrice,
-          price: record.price,
-          screen: record.screen,
-          capacity: record.capacity,
-          color: record.color,
-          ram: record.ram,
-          year: record.year,
-          image: record.image,
-          categoryId: category.id,
-        },
-      });
-    } catch (error) {
-      console.error('Error seeding database:', error);
-    }
   }
 }
 
-main()
-  .finally(async () => {
-    await prisma.$disconnect();
-  });
 
+main()
+    .then(async () => {
+        await prisma.$disconnect()
+    })
+    .catch(async (e) => {
+        console.error(e)
+        await prisma.$disconnect()
+        process.exit(1)
+    })

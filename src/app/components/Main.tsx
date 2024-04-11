@@ -27,10 +27,25 @@ const Main: React.FC = () => {
   
 
   useEffect(() => {
+    let category;
+    switch (value) {
+      case 0:
+        category = "phones";
+        break;
+      case 1:
+        category = "accessories";
+        break;
+      case 2:
+        category = "tablets";
+        break;
+      default:
+        category = "phones";
+    }
+  
     setLoading(true);
 
     axios
-      .get(`/api/categories/${value + 1}`)
+      .get(`/api/categories/${category}`)
       .then((response) => setCurrentCategory(response.data))
       .catch(() => {
         throw Error();

@@ -11,7 +11,7 @@ export async function GET(req: NextRequest, { params }: Params) {
             return new NextResponse("Category id is required", { status: 400 });
         }
 
-        const category = await prisma.category.findUnique({ where: { id: +params.categoryId } })
+        const category = await prisma.category.findFirst({ where: { name: params.categoryId } })
 
         if (!category) {
             return new NextResponse("Category not found", { status: 404 })
@@ -26,7 +26,7 @@ export async function GET(req: NextRequest, { params }: Params) {
           }
         });
 
-        return NextResponse.json(products)
+        return NextResponse.json(products);
     } catch (error) {
         return new NextResponse('Internal error', { status: 500 })
     }
@@ -38,7 +38,7 @@ export async function DELETE(req: NextRequest, { params }: Params) {
             return new NextResponse("Category id is required", { status: 400 });
         }
 
-        const category = await prisma.category.findUnique({ where: { id: +params.categoryId } })
+        const category = await prisma.category.findFirst({ where: { name: params.categoryId } })
 
         if (!category) {
             return new NextResponse("Category not found", { status: 404 })
@@ -67,7 +67,7 @@ export async function PATCH(req: NextRequest, { params }: Params) {
             return new NextResponse("Category id is required", { status: 400 });
         }
 
-        const existingCategory = await prisma.category.findUnique({ where: { id: +params.categoryId } })
+        const existingCategory = await prisma.category.findFirst({ where: { name: params.categoryId } })
 
         if (!existingCategory) {
             return new NextResponse("Category not found", { status: 404 })
