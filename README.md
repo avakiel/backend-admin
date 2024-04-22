@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+**Welcome to our Next.js Admin Dashboard project!** 🚀
 
-## Getting Started
+**Key Features:**
 
-First, run the development server:
+**Efficient Next.js Framework:** Experience fast and dynamic admin operations.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Database Powered by PostgreSQL:** Secure, scalable data storage.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**PrismaORM Integration:** Simplified database management for easy data manipulation.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+**Comprehensive Admin Functionality:** Add, edit, delete, and update goods effortlessly.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**Seamless Integration with React Online Store:** Smooth backend support for our React-based [online store](https://github.com/fe-nov23-nopyton/catalog)
 
-## Deploy on Vercel
+**Deployed on Vercel**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[DEMO](https://backend-admin-eight.vercel.app/)
